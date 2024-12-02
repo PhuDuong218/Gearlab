@@ -11,11 +11,12 @@ a {
     text-decoration: none;
     color: white;
 }
-
 .container{
     display: flex;
+    height: 100vh;
     flex-direction: column;
-    justify-content:space-between;
+    Justify-content: space-between;
+
 }
 .header__content {
     display: flex;
@@ -26,18 +27,6 @@ a {
     align-items: center;
     padding-left: 20px;
     padding-right: 20px;
-    position: fixed; /* Làm cho header cố định */
-    top: 0; /* Gắn header ở phía trên cùng của trang */
-    width: 100%; /* Chiều rộng của header bằng 100% */
-    z-index: 1000; /* Đảm bảo header nằm trên các phần tử khác */
-}
-
-/* Thêm khoảng cách cho phần nội dung chính để tránh bị che khuất bởi header */
-.container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding-top: 80px; /* Khoảng cách để nội dung không bị che khuất */
 }
 .header__logo {
     margin-left: 30px;
@@ -84,7 +73,7 @@ a {
 
 .form-control {
     width: 100%;
-    padding: 10px 40px 10px 15px; /* Chỉnh padding để chừa chỗ cho icon */
+    padding: 10px 40px 10px 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
@@ -92,7 +81,7 @@ a {
 
 .header__search--button {
     position: absolute;
-    right: 10px; /* Đặt vị trí của icon bên phải */
+    right: 10px;
     top: 50%;
     transform: translateY(-50%);
     background: none;
@@ -148,7 +137,7 @@ a {
 }
 
 .footer__section ul li a{
-    color: #d0d0ff;
+    color: #fff;
     text-decoration: none;
 }
 
@@ -160,50 +149,4 @@ a {
 .footer__contact p {
     margin: 5px 0;
     font-size: 14px;
-}
-
-.link {
-    margin-top: 20px;
-    font-size: 14px;
-    color: #333;
-}
-
-.link a {
-    color: #004581;
-    text-decoration: none;
-}
-
-.link a:hover {
-    text-decoration: underline;
-}
-
-.about {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    font-size: 16px;
-    color: #333;
-}
-
-.thank-you {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-.order-details {
-    text-align: left;
-    margin: 20px auto;
-    max-width: 400px;
-}
-
-.contact,
-.call-to-action,
-.social-media a {
-    margin-top: 20px;
-    color: #000000;
 }
