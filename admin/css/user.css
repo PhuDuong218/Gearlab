@@ -310,184 +310,39 @@ a {
     display: block;
 }
 
-.board{
-    display: flex;
-  
-}
-
-.information h1{
-    text-align: center;
-}
-
-/* Tổng quan cho form */
-.date-form {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Khoảng cách giữa các phần tử */
-    justify-content: center; /* Căn giữa nội dung form */
-    padding: 20px;
-    text-align: left;
-}
-
-/* Label */
-.date-form label {
-    font-size: 14px;
-    font-weight: bold;
-    color: #555;
-}
-
-/* Input */
-.date-form input[type="date"] {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 14px;
-}
-
-/* Nút submit */
-.date-form button {
-    padding: 8px 12px;
-    background-color: #004581;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.date-form button:hover {
-    background-color: #0056b3;
-}
-
-.dashboard {
-    align-items: center;
-    display: flex;
-    justify-content: space-around;
-    padding: 20px;
-    
-}
-
-.card {
-    width: 90%; /* Điều chỉnh kích thước card cho màn hình nhỏ */
-    margin-bottom: 20px;
-    background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    border-radius: 8px;
-    padding: 20px;
-    width: 300px;
-    text-align: center;
-}
-
-.icon-container {
-    position: absolute;
-    top: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #ff6f61;
-    color: white;
-    padding: 10px;
-    border-radius: 50%;
-    font-size: 1.5em;
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
-}
-
-.progress-circle {
-    position: relative;
-    width: 100px;
-    height: 100px;
-    margin: 20px auto;
-}
-
-
-svg {
-    width: 100px;
-    height: 100px;
-    transform: rotate(-90deg);
-}
-
-circle {
-    fill: none;
-    stroke-width: 10;
-    stroke: #e6e6e6;
- 
-}
-
-circle:nth-child(2) {
-    stroke: #ff6f61;
-    stroke-dasharray: 282.6; /* 2πr */
-    stroke-dashoffset: calc(282.6 - (var(--progress) / 100) * 282.6);
-    transition: stroke-dashoffset 0.5s ease-in-out;
-}
-
-.progress-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #333;
-}
-
-.card h2 {
-    margin: 10px 0;
-    color: #333;
-    font-size: 1.2em;
-}
-
-.amount {
-    font-size: 2em;
-    color: #ff6f61;
-    margin: 10px 0;
-}
-
-.description {
-    color: #777;
-    font-size: 0.9em;
-}
-
-.information {
-    width:75%;
-    
-}
-
-.attention{
-    width: 25%;
-    margin-top: 100px;
-    margin-left: 20px;
-}
-
-.attention h2{
+.section-container{
+    padding-right: 30px;
     padding-left: 30px;
+}
+
+h1 {
+    text-align: center; /* Căn giữa nội dung */
+    border-bottom: 2px solid #004581; /* Đường gạch dưới tiêu đề */
     padding-bottom: 10px;
-}
-
-.event{
-    width: 90%; 
     margin-bottom: 20px;
-    background-color: #fff;
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
-    border-radius: 8px;
-    padding: 20px;
-    width: 300px;
-    text-align: left;
+    font-size: 24px;
+    color: #004581;
+}
+/* Kiểu checkbox */
+input[type="checkbox"] {
+    transform: scale(1.2); /* Tăng kích thước checkbox */
+    cursor: pointer;
 }
 
-.new-user h2{
+/* Chỉnh khoảng cách checkbox */
+thead th:first-child, 
+tbody td:first-child {
     text-align: center;
-    margin-bottom: 5px;
+    width: 40px; /* Độ rộng cột checkbox */
 }
 
+/* Kiểu dáng bảng */
 table {
-    margin-left: 50px;
-    margin-bottom: 20px;
-    padding: 20px;
+    padding: 30px auto;
     border: 1px solid black;
     width: 90%;
     border-collapse: collapse; /* Loại bỏ khoảng cách giữa các ô */
     text-align: center; /* Căn giữa nội dung */
-    
 }
 th, td {
     padding: 10px;
@@ -503,10 +358,236 @@ th {
     border-collapse: collapse;
 }
 
-td{
-    padding-left: 40px;
-    padding-right: 40px;
+/* Kiểu dáng nút */
+/* .user-actions button {
+    background-color: #f5f5f5;  Màu nền mặc định
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+    transition: all 0.3s ease;
+} */
 
+/* Hiệu ứng hover */
+/* .user-actions button:hover {
+    background-color: #004581;
+    color: #fff;
+} */
+
+/* Màu sắc nút cụ thể */
+.action-edit {
+    color: #28a745;
+}
+
+.action-edit:hover {
+    background-color: #218838;
+}
+
+.action-delete {
+    color: #dc3545;
+}
+
+.action-delete:hover {
+    background-color: #c82333;
+}
+
+.action-lock {
+    color: #ffc107;
+}
+
+.action-lock:hover {
+    background-color: #e0a800;
+}
+
+/* Thay đổi màu nền khi bị khóa */
+tr.locked {
+    background-color: #f8d7da; /* Màu đỏ nhạt */
+    color: #721c24; /* Màu chữ đỏ */
 }
 
 
+/* Responsive (tùy chỉnh cho màn hình nhỏ) */
+@media (max-width: 768px) {
+    table {
+        font-size: 12px; /* Thu nhỏ chữ */
+    }
+
+    th, td {
+        padding: 5px; /* Giảm padding cho ô */
+    }
+
+    .user-actions button {
+        padding: 5px; /* Giảm kích thước nút */
+        font-size: 12px;
+    }
+}
+
+/* Bố trí các nút trong một hàng */
+.button-container {
+    align-items: center;
+    padding: 5px 20px;
+    display: flex; /* Sử dụng Flexbox để bố trí các nút trong một hàng */
+    justify-content: center; /* Căn giữa các nút theo chiều ngang */
+    gap: 20px; /* Khoảng cách giữa các nút */
+}
+
+/* Căn nút và chỉnh style */
+.delete, .add-user {
+    padding: 10px 20px; /* Tăng khoảng cách trong nút */
+    color: white; /* Màu chữ trắng */
+    border: none; /* Loại bỏ viền */
+    border-radius: 5px; /* Bo góc nút */
+    font-size: 16px; /* Kích thước chữ */
+    cursor: pointer; /* Hiển thị con trỏ khi hover */
+    transition: background-color 0.3s ease; /* Hiệu ứng mượt khi hover */
+    display: inline-block; /* Đảm bảo chúng nằm trong một hàng */
+}
+
+.add-user-btn{
+    background-color: #ffffff;
+}
+
+.add-user-btn:hover{
+    background-color: #288ce2;
+}
+
+/* Nút "Xóa" */
+.delete {
+    background-color: #c82333; /* Màu nền đỏ */
+}
+
+/* Nút "Xóa" khi hover */
+.delete:hover {
+    background-color: #bd2130; /* Màu nền khi hover */
+}
+
+/* Nút "Sửa người dùng" */
+.add-user {
+    background-color: #10bb52; /* Màu nền xanh lá */
+}
+
+/* Nút "Sửa người dùng" khi hover */
+.add-user:hover {
+    background-color: #0f9e46; /* Màu nền khi hover */
+}
+
+.edit-form {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+.edit-form h2 {
+    margin-bottom: 20px;
+}
+
+.edit-form label {
+    display: block;
+    margin-top: 10px;
+}
+
+.edit-form input,
+.edit-form select {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.edit-form button {
+    margin-top: 20px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.add-form{
+    display: none;
+}
+
+/* Form thêm người dùng */
+.add-user-form {
+    display: none;
+    position: fixed; /* Đặt vị trí cố định trên cùng của màn hình */
+    top: 10%; /* Cách từ trên cùng một khoảng */
+    left: 50%; /* Canh giữa theo chiều ngang */
+    transform: translateX(-50%); /* Canh giữa hoàn hảo */
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Đổ bóng xung quanh */
+    border-radius: 5px;
+    z-index: 1000; /* Đảm bảo form hiển thị trên các phần tử khác */
+    width: 350px;
+}
+
+/* Tiêu đề form */
+.add-user-form h3 {
+    margin-bottom: 20px;
+}
+
+/* Label cho các trường nhập */
+.add-user-form label {
+    display: block;
+    margin-top: 10px;
+}
+
+/* Các trường nhập */
+.add-user-form input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Các nút lưu và hủy */
+.add-user-form button {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.add-user-form button:hover {
+    background-color: #45a049; /* Thay đổi màu khi hover */
+}
+
+.add-user-form #cancel-add-user {
+    background-color: #f44336;
+}
+
+.add-user-form #cancel-add-user:hover {
+    background-color: #da190b;
+}
+
+#save-order {
+    background-color: #4CAF50; /* Màu xanh lá */
+    color: white;
+}
+
+#save-order:hover {
+    background-color: #45a049; /* Màu xanh lá đậm khi hover */
+    color: white; /* Màu chữ trắng khi hover */
+}
+
+/* Nút "Hủy" */
+#cancel-create {
+    background-color: #f44336; /* Màu đỏ */
+    color: white;
+}
+
+#cancel-create:hover {
+    background-color: #e53935; /* Màu đỏ đậm khi hover */
+    color: white; /* Màu chữ trắng khi hover */
+}

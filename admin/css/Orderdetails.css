@@ -310,184 +310,27 @@ a {
     display: block;
 }
 
-.board{
-    display: flex;
-  
-}
-
-.information h1{
-    text-align: center;
-}
-
-/* Tổng quan cho form */
-.date-form {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Khoảng cách giữa các phần tử */
-    justify-content: center; /* Căn giữa nội dung form */
-    padding: 20px;
-    text-align: left;
-}
-
-/* Label */
-.date-form label {
-    font-size: 14px;
-    font-weight: bold;
-    color: #555;
-}
-
-/* Input */
-.date-form input[type="date"] {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 14px;
-}
-
-/* Nút submit */
-.date-form button {
-    padding: 8px 12px;
-    background-color: #004581;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.date-form button:hover {
-    background-color: #0056b3;
-}
-
-.dashboard {
-    align-items: center;
-    display: flex;
-    justify-content: space-around;
-    padding: 20px;
-    
-}
-
-.card {
-    width: 90%; /* Điều chỉnh kích thước card cho màn hình nhỏ */
-    margin-bottom: 20px;
-    background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    border-radius: 8px;
-    padding: 20px;
-    width: 300px;
-    text-align: center;
-}
-
-.icon-container {
-    position: absolute;
-    top: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #ff6f61;
-    color: white;
-    padding: 10px;
-    border-radius: 50%;
-    font-size: 1.5em;
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
-}
-
-.progress-circle {
-    position: relative;
-    width: 100px;
-    height: 100px;
-    margin: 20px auto;
-}
-
-
-svg {
-    width: 100px;
-    height: 100px;
-    transform: rotate(-90deg);
-}
-
-circle {
-    fill: none;
-    stroke-width: 10;
-    stroke: #e6e6e6;
- 
-}
-
-circle:nth-child(2) {
-    stroke: #ff6f61;
-    stroke-dasharray: 282.6; /* 2πr */
-    stroke-dashoffset: calc(282.6 - (var(--progress) / 100) * 282.6);
-    transition: stroke-dashoffset 0.5s ease-in-out;
-}
-
-.progress-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #333;
-}
-
-.card h2 {
-    margin: 10px 0;
-    color: #333;
-    font-size: 1.2em;
-}
-
-.amount {
-    font-size: 2em;
-    color: #ff6f61;
-    margin: 10px 0;
-}
-
-.description {
-    color: #777;
-    font-size: 0.9em;
-}
-
-.information {
-    width:75%;
-    
-}
-
-.attention{
-    width: 25%;
-    margin-top: 100px;
-    margin-left: 20px;
-}
-
-.attention h2{
+.section-container{
+    padding-right: 30px;
     padding-left: 30px;
+}
+
+h1 {
+    text-align: center; /* Căn giữa nội dung */
+    border-bottom: 2px solid #004581; /* Đường gạch dưới tiêu đề */
     padding-bottom: 10px;
-}
-
-.event{
-    width: 90%; 
     margin-bottom: 20px;
-    background-color: #fff;
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
-    border-radius: 8px;
-    padding: 20px;
-    width: 300px;
-    text-align: left;
+    font-size: 24px;
+    color: #000000;
 }
 
-.new-user h2{
-    text-align: center;
-    margin-bottom: 5px;
-}
-
+/* Kiểu dáng bảng */
 table {
-    margin-left: 50px;
-    margin-bottom: 20px;
-    padding: 20px;
+    padding: 30px auto;
     border: 1px solid black;
     width: 90%;
     border-collapse: collapse; /* Loại bỏ khoảng cách giữa các ô */
     text-align: center; /* Căn giữa nội dung */
-    
 }
 th, td {
     padding: 10px;
@@ -503,10 +346,7 @@ th {
     border-collapse: collapse;
 }
 
-td{
-    padding-left: 40px;
-    padding-right: 40px;
-
+.total h2{
+    text-align: right;
 }
-
 
