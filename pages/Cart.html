@@ -1,1 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/fontawesome-free-5.12.1-web/css/all.css">
+    <link rel="stylesheet" href="/css/Cart1.css">
+    <link rel="stylesheet" href="/css/header-footer.css">
+    <title>Linh kiện điện tử</title>
+    <link rel="icon" type="image" href="/Images/logo/favicon-32x32.png">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header__content">
+            <div class="header__menu" id="mainNav">
+                <a class="header__link" href="/index.html">
+                    <img class="header__logo" src="../Images/logo/logo.png" alt="logo">
+                </a>
+                <form class="input-group" action="" method="post">
+                    <div class="input-wrapper">
+                        <input type="text" class="form-control" placeholder="Tìm kiếm..." aria-label="Search">
+                        <button type="submit" id="button-addon2" class="header__search--button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </form>
+                <ul class="header__active">
+                    <li><a href="/index.html">Trang chủ</a></li>
+                    <li><a href="/pages/menutong/menu.html">Sản phẩm</a></li>
+                    <li><a href="/pages/Intro.html">Giới thiệu</a></li>
+                    <li><a href="/pages/Contact.html">Liên hệ</a></li>
+                </ul>
+            </div>
+            <div class="header__tool">
+                <a href="#" id="userIcon">
+                    <i class="fa fa-user"></i>
+                </a>
+                <div id="userMenu" class="user-menu">
+                    <a href="/pages/Login.html">Đăng nhập</a>
+                    <a href="/pages/SignUp.html">Đăng ký</a>
+                </div>
+                <a href="/pages/Cart.html">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="notify-cart" id="quantity">0</span>
+                </a>
+            </div>
+        </header>
+
+
+        <!-- Cart Section -->
+        <div class="cart">
+            <nav class="breadcrumb">
+                <a href="/index.html">Trang chủ</a> /
+                <a href="">Giỏ hàng</a>
+                <h2>Giỏ Hàng Của Bạn</h2>
+
+
+                <div class="cart-total">
+                    <p>Tổng tiền: <span id="total-price">1.150.000₫</span></p>
+                    <button class="order-now">Đặt hàng ngay</button>
+                </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer__container">
+                <div class="footer__section">
+                    <h3>HỖ TRỢ</h3>
+                    <ul>
+                        <li><a href="#">Hướng dẫn mua hàng</a></li>
+                        <li><a href="#">Sản phẩm yêu thích</a></li>
+                        <li><a href="https://www.facebook.com/profile.php?id=100067582450693" target="_blank"><i
+                                    class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h3>TÀI KHOẢN</h3>
+                    <ul>
+                        <li><a href="/pages/SignUp.html">Đăng ký tài khoản</a></li>
+                        <li><a href="/pages/Login.html">Đăng nhập tài khoản</a></li>
+                        <li><a href="/pages/Cart.html">Giỏ hàng của bạn</a></li>
+                    </ul>
+                </div>
+                <div class="footer__contact">
+                    <h3>THÔNG TIN LIÊN HỆ</h3>
+                    <p>Giờ làm việc: Thứ 2 - Thứ 7: 8h00 đến 17h30</p>
+                    <p>Email: support@gearlab.com</p>
+                    <p>Hotline: 1800-1003</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Cập nhật tổng tiền
+        function updateTotal() {
+            let total = 0;
+            document.querySelectorAll('.cart-item').forEach(item => {
+                const price = parseInt(item.getAttribute('data-price'));
+                const quantity = parseInt(item.querySelector('.quantity-input').value);
+                total += price * quantity;
+            });
+            document.getElementById('total-price').innerText = total.toLocaleString('vi-VN') + '₫';
+        }
+
+        // Cập nhật số lượng sản phẩm trong giỏ hàng
+        function updateCartCount() {
+            const itemCount = document.querySelectorAll('.cart-item').length;
+            document.querySelector('.notify-cart').innerText = itemCount;
+        }
+
+        // Xóa sản phẩm
+        document.querySelectorAll('.remove-item').forEach(button => {
+            button.addEventListener('click', function () {
+                this.closest('.cart-item').remove();
+                updateTotal();
+                updateCartCount();
+            });
+        });
+
+        // Tăng hoặc giảm số lượng
+        document.querySelectorAll('.quantity-button').forEach(button => {
+            button.addEventListener('click', function () {
+                const quantityInput = this.closest('.quantity-container').querySelector('.quantity-input');
+                let currentValue = parseInt(quantityInput.value);
+                if (this.classList.contains('decrease') && currentValue > 1) {
+                    quantityInput.value = currentValue - 1;
+                } else if (this.classList.contains('increase')) {
+                    quantityInput.value = currentValue + 1;
+                }
+                updateTotal();
+            });
+        });
+
+
+        // Kiểm tra giá trị nhập vào ô số lượng
+        document.querySelectorAll('.quantity-input').forEach(input => {
+            input.addEventListener('input', function () {
+                if (this.value < 1) this.value = 1;
+                updateTotal();
+            });
+        });
+
+        // Cập nhật số lượng giỏ hàng và tổng tiền ban đầu
+        updateCartCount();
+        updateTotal();
+
+
+        document.getElementById('userIcon').addEventListener('click', function () {
+            var menu = document.getElementById('userMenu');
+            // Toggle hiển thị menu đăng nhập/đăng ký khi nhấn vào icon con người
+            menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+        });
+
+        // Đóng menu khi người dùng nhấn bên ngoài menu
+        document.addEventListener('click', function (event) {
+            var menu = document.getElementById('userMenu');
+            var userIcon = document.getElementById('userIcon');
+            if (!userIcon.contains(event.target) && !menu.contains(event.target)) {
+                menu.style.display = 'none';
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>

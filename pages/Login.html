@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/fontawesome-free-5.12.1-web/css/all.css">
+    <link rel="stylesheet" href="/css/Login.css">
+    <title>Đăng nhập</title>
+    <link rel="icon" type="Images" href="/Images/logo/favicon-32x32.png">
+</head>
+
+<body>
+    <div class="full">
+        <header class="header__content">
+            <div class="header__menu" id="mainNav">
+                <a class="header__link" href="./index.html">
+                    <img class="header__logo" src="/Images/logo/logo.png" alt="logo">
+                </a>
+                <form class="input-group" action="" method="post">
+                    <div class="input-wrapper">
+                        <input type="text" class="form-control" placeholder="Tìm kiếm..." aria-label="Search">
+                        <button type="submit" id="button-addon2" class="header__search--button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </form>
+                <ul class="header__active">
+                    <li><a href="/index.html">Trang chủ</a></li>
+                    <li><a href="/pages/menutong/menu.html">Sản phẩm</a></li>
+                    <li><a href="/pages/Intro.html">Giới thiệu</a></li>
+                    <li><a href="/pages/Contact.html">Liên hệ</a></li>
+                </ul>
+            </div>
+            <div class="header__tool">
+                <a href="/pages/SignUp.html">
+                    <i class="fa fa-user"></i>
+                </a>
+                <a href="/pages/Cart.html">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="notify-cart">0</span>
+                </a>
+            </div>
+        </header>
+
+        <main>
+
+            <div class="container">
+                <div class="container_login">
+                    <div class="login-form">
+                        <h1 class="login-h1">Đăng Nhập</h1>
+                        <form action="" method="post" id="form-login" role="form" onsubmit="checkLogin()">
+                            <div class="form-group">
+                                <label for="username">Tên đăng nhập:</label>
+                                <input type="text" class="form-control" id="username" name="username"
+                                    placeholder="Tên đăng nhập" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Mật khẩu:</label>
+                                <div class="input-wrapper">
+                                    <input type="password" class="form-control" id="password" name="password" placeholder="Mật khẩu" required>
+                                    <span class="eye-icon" id="togglePassword">
+                                        <i class="fas fa-eye"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <button type="submit" class="btn btn-primary">ĐĂNG NHẬP</button>
+                            </div>
+                        </form>
+                        <div class="login-links">
+                            <button class="btn-link">
+                                <a href="/pages/Forgot.html" target="_blank">Quên mật khẩu?</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="footer__container">
+                <div class="footer">
+                    <div class="footer__section">
+                        <h3>HỖ TRỢ</h3>
+                        <ul>
+                            <li><a href="#">Hướng dẫn mua hàng</a></li>
+                            <li><a href="#">Sản phẩm yêu thích</a></li>
+                            <li><a href="https://www.facebook.com/profile.php?id=100067582450693" target="_blank"><i
+                                        class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="https://www.facebook.com/profile.php?id=100022284935885&locale=vi_VN"
+                                    target="_blank"><i class="fab fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__section">
+                        <h3>TÀI KHOẢN</h3>
+                        <ul>
+                            <li><a href="/pages/SignUp.html">Đăng ký tài khoản</a></li>
+                            <li><a href="/pages/Login.html">Đăng nhập tài khoản</a></li>
+                            <li><a href="/pages/Cart.html">Giỏ hàng của bạn</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__contact">
+                        <h3>THÔNG TIN LIÊN HỆ</h3>
+                        <p>Giờ làm việc: Thứ 2 - Thứ 7: 8h00 đến 17h30</p>
+                        <p>Email: <a href="mailto:support@gearlab.com">support@gearlab.com</a></p>
+                        <p>Hotline: 1800-1003</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+<script src="/js/login.js"></script>
+
+</html>
