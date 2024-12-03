@@ -5,18 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/fontawesome-free-5.12.1-web/css/all.min.css">
-    <link rel="stylesheet" href="/css/Intro.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="../css/Intro.css">
     <title>Giới thiệu</title>
-    <link rel="icon" type="Images" href="/Images/index/favicon-32x32.png">
+    <link rel="icon" type="Images" href="../Images/index/favicon-32x32.png">
 </head>
 
 <body>
     <!-- Header -->
     <header class="header__content">
         <div class="header__menu" id="mainNav">
-            <a class="header__link" href="/page_user/user-index.html">
-                <img class="header__logo" src="/Images/logo/logo.png" alt="logo">
+            <a class="header__link" href="../page_user/user-index.html">
+                <img class="header__logo" src="../Images/logo/logo.png" alt="logo">
             </a>
             <form class="input-group search-form" action="" method="post">
                 <div class="input-wrapper">
@@ -27,30 +27,30 @@
                 </div>
             </form>
             <ul class="header__active">
-                <li><a href="/page_user/user-index.html">Trang chủ</a></li>
-                <li><a href="/page_user/menutong/menu.html">Sản phẩm</a></li>
-                <li><a href="/page_user/Intro.html">Giới thiệu</a></li>
-                <li><a href="/page_user/Contact.html">Liên hệ</a></li>
+                <li><a href="../page_user/user-index.html">Trang chủ</a></li>
+                <li><a href="../page_user/menutong/menu.html">Sản phẩm</a></li>
+                <li><a href="../page_user/Intro.html">Giới thiệu</a></li>
+                <li><a href="../page_user/Contact.html">Liên hệ</a></li>
             </ul>
         </div>
         <div class="header__tool">
-            <a href="/page_user/user-profile.html" title="Hồ sơ">
+            <a href="../page_user/user-profile.html" title="Hồ sơ">
                 <i class="fa fa-user"></i>
             </a>
-            <a href="/page_user/Cart.html" title="Giỏ hàng">
+            <a href="../page_user/Cart.html" title="Giỏ hàng">
                 <i class="fas fa-shopping-cart"></i>
                 <span class="notify-cart">0</span>
             </a>
-            <a href="/index.html" title="Đăng xuất">
+            <a href="../index.html" title="Đăng xuất">
                 <i class="fas fa-sign-out-alt"></i>
             </a>
         </div>
     </header>
 
     <div class="link">
-        <a href="/index.html">Trang chủ</a>
+        <a href="../index.html">Trang chủ</a>
         <span> / </span>
-        <a href="intro.html">Giới thiệu</a>
+        <a href="../Intro.html">Giới thiệu</a>
     </div>
 
     <section class="about">
@@ -127,7 +127,7 @@
             event.preventDefault(); // Ngăn chặn hành động mặc định
             const confirmLogout = confirm('Bạn có chắc muốn đăng xuất không?');
             if (confirmLogout) {
-                window.location.href = '/index.html'; // Điều hướng tới trang đăng xuất
+                window.location.href = '../index.html'; // Điều hướng tới trang đăng xuất
             }
         });
     </script>
