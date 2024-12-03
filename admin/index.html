@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/fontawesome-free-5.12.1-web/css/all.css">
+    <link rel="stylesheet" href="../admin/css/index.css">
+    <title>Linh kiện điện tử</title>
+    <link rel="icon" type="image" href="./Images/favicon-32x32.png">
+</head>
+
+<body>
+    <div class="container">
+        <div class="login-box">
+            <div class="login-key">
+                <i class="fa fa-user"></i>
+            </div>
+            <div class="login-title">
+                Quản trị Gearlab Technology
+
+            </div>
+
+            <div class="form-login">
+                <label for="un">Tên đăng nhập:</label>
+                <input type="text" id="un" placeholder="Nhập tên đăng nhập" autofocus>
+                <div class="input-wrapper">
+                    <label for="mk">Mật khẩu:</label>
+                    <div class="input-container">
+                        <i class="fa fa-eye" onclick="togglePasswordVisibility()"></i>
+                        <input type="password" id="mk" placeholder="Nhập mật khẩu">
+                    </div>
+                </div>
+                
+
+
+
+            <button type="button" class="btn-outline-primary" id="btndangnhap" onclick="validate()">Đăng nhập</button>
+            <div class="message" id="error-message"></div>
+
+
+        </div>
+    </div>
+
+    <script>
+        let attempt = 3;
+
+        function validate() {
+            const username = document.getElementById("un").value.trim();
+            const password = document.getElementById("mk").value.trim();
+            const message = document.getElementById("error-message");
+
+            if (username === "admin" && password === "admin123") {
+                alert("Đăng nhập thành công!");
+                window.location.href = "admin.html";
+            } else {
+                attempt--;
+                if (attempt > 0) {
+                    message.textContent = `Sai thông tin đăng nhập. Bạn còn ${attempt} lần thử!`;
+                } else {
+                    message.textContent = "Bạn đã hết số lần thử! Vui lòng liên hệ quản trị viên.";
+                    document.getElementById("un").disabled = true;
+                    document.getElementById("mk").disabled = true;
+                    document.getElementById("btndangnhap").disabled = true;
+                } x
+            }
+        }
+
+        function togglePasswordVisibility() {
+            const passwordField = document.getElementById("mk");
+            passwordField.type = passwordField.type === "password" ? "text" : "password";
+        }
+        const togglePassword = document.getElementById('togglePassword');  // Biểu tượng con mắt
+
+        // Thêm sự kiện cho việc nhấp vào con mắt để hiển thị/ẩn mật khẩu
+        togglePassword.addEventListener('click', function () {
+            const type = passwordInput.type === 'password' ? 'text' : 'password';
+            passwordInput.type = type;
+
+            // Thay đổi biểu tượng con mắt
+            const eyeIcon = this.querySelector('i');
+            if (type === 'password') {
+                eyeIcon.classList.remove('fa-eye-slash');
+                eyeIcon.classList.add('fa-eye');
+            } else {
+                eyeIcon.classList.remove('fa-eye');
+                eyeIcon.classList.add('fa-eye-slash');
+            }
+        });
+    </script>
+</body>
+
+</html>
