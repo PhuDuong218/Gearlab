@@ -280,11 +280,19 @@
         });
 
         // Thêm sự kiện click cho nút đăng xuất
-        document.getElementById('logout-btn').addEventListener('click', function () {
-            if (confirm('Bạn có chắc chắn muốn đăng xuất không?')) {
-                window.location.href = 'admin/index.html';
-            }
-        });
+        // Thêm sự kiện click cho nút đăng xuất
+document.getElementById('logout-btn').addEventListener('click', function () {
+    if (confirm('Bạn có chắc chắn muốn đăng xuất không?')) {
+        // Xóa dữ liệu đăng nhập lưu trữ
+        localStorage.removeItem('isLoggedIn');  // Nếu bạn đang dùng localStorage
+        // Hoặc nếu bạn dùng sessionStorage:
+        // sessionStorage.removeItem('isLoggedIn');
+
+        // Chuyển hướng đến trang đăng nhập hoặc trang chủ
+        window.location.href = '/index.html'; // Hoặc trang đăng nhập của bạn
+    }
+});
+
 
 
     </script>
