@@ -1,0 +1,406 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.header__content {
+    display: flex;
+    justify-content: space-between;
+    background-color: #004581;
+    color: white;
+    height: 80px;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+
+.full {
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 80px;
+    margin-bottom: 10px;
+    min-height: 100vh;
+    /* Khoảng cách để nội dung không bị che khuất */
+}
+
+.header__logo {
+    margin-left: 30px;
+    width: 100px;
+    height: 80px;
+    border-radius: 5px;
+}
+
+.header__link {
+    flex: 1;
+    width: 70px;
+    height: 70px;
+}
+
+.header__menu {
+    flex: 4;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.header__menu a {
+    text-decoration: none;
+    color: white;
+}
+
+.header__tool {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: center;
+}
+
+.header__tool a {
+    text-decoration: none;
+    color: white;
+}
+
+.header__active {
+    flex: 2;
+    display: flex;
+    gap: 40px;
+    margin: 0;
+}
+
+.input-group {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+    max-width: 400px;
+}
+
+.input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px 40px 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.header__search--button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #888;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+
+.header__search--button:hover {
+    color: #004581;
+}
+
+.footer {
+    background-color: #004581;
+    color: white;
+    padding: 20px 0;
+    font-size: 14px;
+    text-align: center;
+    flex-shrink: 0;
+    margin-top: 55px;
+
+}
+
+.footer__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer__section,
+.footer__contact {
+    margin: 10px;
+    width: 200px;
+}
+
+.footer__section h3,
+.footer__contact h3 {
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.footer__section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer__section ul li {
+    margin: 5px 0;
+}
+
+.footer__section ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer__section ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer__contact p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+
+h3,
+h4,
+h5,
+h6 {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+/* BREADCRUMD */
+/* .breadcrumb_section {
+    padding-top: 100px;
+
+} */
+
+.breadcrumb_section .breadcrumb {
+    margin-top: 15px;
+    padding: 10px 0;
+}
+
+.breadcrumb_section .breadcrumb .breadcrumb-item a {
+    text-decoration: none;
+    color: #333;
+    font-size: 13px;
+}
+
+.breadcrumb_section .breadcrumb .breadcrumb-item.active {
+    color: #004581;
+}
+
+/* PAYMENT  */
+.payment__content__left label,
+.payment__content__right label {
+    margin-bottom: 10px;
+    display: block;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.payment__content__left label i {
+    margin-right: 5px;
+}
+
+.payment__content__left input[type=text],
+.payment__content__left input[type=tel] {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.payment__content__left label[for=payment--defaul] {
+    display: inline-block;
+    margin-left: 5px;
+    position: relative;
+}
+
+.payment__content__left label[for=payment--defaul] i {
+    cursor: help;
+}
+
+.payment__content__left label[for=payment--defaul] i:hover {
+    color: #004581;
+}
+
+.payment__content__left label[for=payment--defaul] .more-info {
+    display: none;
+    border: 1px solid #004581;
+    width: 280px;
+    border-radius: 3px;
+    padding: 12px;
+    position: absolute;
+    left: 245px;
+    bottom: -20px;
+    color: black;
+}
+
+.payment__content__left label[for=payment--defaul] i:hover .more-info {
+    display: block;
+    transition: linear 2s;
+}
+
+.payment__content__left textarea {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.payment__content__left .payment--button {
+    display: block;
+    padding: 8px 28px;
+    line-height: normal;
+    border: 1px solid #004581;
+    text-transform: uppercase;
+    font-size: 16px;
+    text-align: center;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #fff;
+    color: #004581;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.payment__content__left .payment--button a {
+    text-decoration: none;
+    color: #fff;
+
+}
+
+.payment__content__left .payment--button:hover {
+    background-color: #004581;
+    color: #fff;
+    transition: all .2s;
+}
+
+.payment__content__left .modal-content .modal-header {
+    text-align: center;
+    display: block;
+    border: none;
+
+}
+
+.payment__content__left .modal-content h1 {
+    /* font-weight: 700; */
+    color: #004581;
+    font-size: 24px !important;
+}
+
+.payment__content__left .modal-content .modal-body span {
+    color: #004581;
+    font-weight: 700;
+}
+
+.payment__content__left .modal-content .modal-body {
+    text-align: center;
+    padding-top: 0;
+    padding-bottom: 0;
+
+}
+
+.payment__content__left .modal-content .modal-footer {
+    justify-content: center;
+    border: none;
+}
+
+.payment__content__left .modal-content .modal-footer .btn-left {
+    background-color: #ccc;
+    color: #fff;
+}
+
+.payment__content__left .modal-content .modal-footer .btn-right {
+    background-color: #004581;
+    color: #fff;
+}
+
+.payment__content__right {
+    position: relative;
+}
+
+#payment__method {
+    position: unset;
+}
+
+#payment__method .btn {
+    border: none;
+}
+
+#payment__method label:not(.active)+.payment__method--visa,
+#payment__method label:not(.active)+.payment__method--master,
+#payment__method label:not(.active)+.payment__method--money,
+#payment__method label:not(.active)+.payment__method--bank {
+    display: none;
+}
+
+#payment__method .payment__method {
+    width: 100%;
+    position: absolute;
+    top: 125px;
+    left: 0;
+    padding: 0 12px;
+}
+
+#payment__method .payment__method p {
+    background-color: #EEEEEE;
+    padding: 12px;
+    border-radius: 3px;
+    font-size: 1rem;
+}
+
+#payment__method .payment__method p span {
+    color: #004581;
+    font-weight: bold;
+}
+.total {
+    text-align: right;
+}
+
+.payment--button {
+    background-color: #004581;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 10px;
+}
+.payment--button:hover{
+    background-color: #0359a4;
+}
+@media (max-width: 768px) {
+    .payment__content__left, .payment__content__right {
+        flex: 100%;
+    }
+}
