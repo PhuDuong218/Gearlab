@@ -5,18 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/fontawesome-free-5.12.1-web/css/all.css">
-    <link rel="stylesheet" href="/css/menu.css">
-    <title>Thẻ Nhớ</title>
-    <link rel="icon" type="image" href="/Images/logo/favicon-32x32.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="../../css/menu.css">
+    <title>Bàn phím</title>
+    <link rel="icon" type="image" href="../../Images/logo/favicon-32x32.png">
 </head>
 
 <body>
     <div class="container">
         <header class="header__content ">
             <div class="header__menu" id="mainNav">
-                <a class="header__link" href="./index.html">
-                    <img class="header__logo" src="/Images/logo/logo.png" alt="logo">
+                <a class="header__link" href="../../index.html">
+                    <img class="header__logo" src="../../Images/logo/logo.png" alt="logo">
                 </a>
                 <form class="input-group" action="" method="post">
                     <div class="input-wrapper">
@@ -27,19 +27,20 @@
                     </div>
                 </form>
                 <ul class="header__active">
-                    <li><a href="/index.html">Trang chủ</a></li>
-                    <li><a href="/pages/menutong/menu.html">Sản phẩm</a></li>
-                    <li><a href="/pages/Intro.html">Giới thiệu</a></li>
-                    <li><a href="/pages/Contact.html">Liên hệ</a></li>
+                    <li><a href="../../index.html">Trang chủ</a></li>
+                    <li><a href="../../pages/menutong/menu.html">Sản phẩm</a></li>
+                    <li><a href="../../pages/Intro.html">Giới thiệu</a></li>
+                    <li><a href="../../pages/Contact.html">Liên hệ</a></li>
                 </ul>
             </div>
             <div class="header__tool">
-                <a href="">
-                    <i class="fa fa-user"></i>
-                </a>
-                <a href="">
+                <div id="userMenu" class="user-menu">
+                    <a href="../../pages/Login.html">Đăng nhập</a> | 
+                    <a href="../../pages/SignUp.html">Đăng ký</a>
+                </div>
+                <a href="../../pages/Cart.html">
                     <i class="fas fa-shopping-cart"></i>
-                    <span class="notify-cart">0</span>
+                    <span class="notify-cart" id="quantity">0</span>
                 </a>
             </div>
         </header>
@@ -50,38 +51,38 @@
             <div class="title">
                 <h1>Danh mục sản phẩm</h1>`
                 <div class="product_tags mb-4">
-                    <a class="btn btn-outline-secondary active" role="button" href="/pages/menutong/menu.html"
+                    <a class="btn btn-outline-secondary active" role="button" href="../../pages/menutong/menu.html"
                         type="Tất cả"> <button>Tất cả </button>
                     </a>
-                    <a class="btn1-menu btn-outline-secondary" role="button" href="/pages/menutong/banphim.html"
+                    <a class="btn1-menu btn-outline-secondary" role="button" href="../../pages/menutong/banphim.html"
                         type="Bàn phím"><button>Bàn
                             phím</button></a>
-                    <a class="btn btn-outline-secondary" role="button" href="/pages/menutong/capsac.html"
+                    <a class="btn btn-outline-secondary" role="button" href="../../pages/menutong/capsac.html"
                         type="Cáp sạc"><button>Cáp
                             sạc</button></a>
-                    <a class="btn btn-outline-secondary" role="button" href="/pages/menutong/chuot.html"
+                    <a class="btn btn-outline-secondary" role="button" href="../../pages/menutong/chuot.html"
                         type="Chuột"><button> Chuột </button>
                     </a>
-                     <a class="btn btn-outline-secondary" role="button" href="/pages/menutong/loa.html"
+                     <a class="btn btn-outline-secondary" role="button" href="../../pages/menutong/loa.html"
                             type="Loa"><button>Loa</button></a>
-                     <a class="btn btn-outline-secondary" role="button" href="/pages/menutong/manhinh.html"
+                     <a class="btn btn-outline-secondary" role="button" href="../../pages/menutong/manhinh.html"
                             type="Màn hình"><button>Màn
                             Hinh</button></a> 
-                     <a class="btn btn-outline-secondary" role="button" href="/pages/menutong/mic.html"
+                     <a class="btn btn-outline-secondary" role="button" href="../../pages/menutong/mic.html"
                             type="Mic"><button>Mic</button></a>
                     
-                     <a class="btn btn-outline-secondary" role="button" href="/pages/menutong/tainghe.html"
+                     <a class="btn btn-outline-secondary" role="button" href="../../pages/menutong/tainghe.html"
                             type="Tai nghe"><button>Tai
                             nghe</button></a> 
-                     <a class="btn btn-outline-secondary" role="button" href="/pages/menutong/thenho.html"
+                     <a class="btn btn-outline-secondary" role="button" href="../../pages/menutong/thenho.html"
                             type="Thẻ nhớ"><button>Thẻ
                             nhớ</button></a> 
                 </div>
                 <div class="product__filter mb-2 text-end">
                     <section class="product-list">
                         <div class="product-item">
-                            <a href="/pages/products/banphim1.html">
-                                <img src="/Images/BanPhim/banphim1.png" alt="Bàn phím DAREU EK98 PRO Proto Dream switch"
+                            <a href="../../pages/products/banphim1.html">
+                                <img src="../../Images/BanPhim/banphim1.png" alt="Bàn phím DAREU EK98 PRO Proto Dream switch"
                                     class="product-image">
                                 <h3 class="product-name">Bàn phím DAREU EK98 PRO Proto Dream switch</h3>
                                 <p class="product-price">1.250.000₫</p>
@@ -89,8 +90,8 @@
                             </a>
                         </div>
                         <div class="product-item">
-                            <a href="/pages/products/banphim2.html">
-                                <img src="/Images/BanPhim/banphim2.png"
+                            <a href="../../pages/products/banphim2.html">
+                                <img src="../../Images/BanPhim/banphim2.png"
                                     alt="Bàn phím cơ DareU EK65s White Black PBT Dream Switch" class="product-image">
                                 <h3 class="product-name">Bàn phím cơ DareU EK65s White Black PBT Dream Switch</h3>
                                 <p class="product-price">750.000₫</p>
@@ -98,8 +99,8 @@
                             </a>
                         </div>
                         <div class="product-item">
-                            <a href="/pages/products/banphim3.html">
-                                <img src="/Images/BanPhim/banphim3.png"
+                            <a href="../../pages/products/banphim3.html">
+                                <img src="../../Images/BanPhim/banphim3.png"
                                     alt="Bàn phím cơ AKKO 5075B Plus Transparent ASA Black Piano Pro"
                                     class="product-image">
                                 <h3 class="product-name">Bàn phím cơ AKKO 5075B Plus Transparent ASA Black Piano Pro
@@ -109,8 +110,8 @@
                             </a>
                         </div>
                         <div class="product-item">
-                            <a href="/pages/products/banphim4.html">
-                                <img src="/Images/BanPhim/banphim4.png"
+                            <a href="../../pages/products/banphim4.html">
+                                <img src="../../Images/BanPhim/banphim4.png"
                                     alt="Bàn phím DareU Không dây EK98 Pro RGB Đen Dream Switch" class="product-image">
                                 <h3 class="product-name">Bàn phím DareU Không dây EK98 Pro RGB Đen Dream Switch</h3>
                                 <p class="product-price">1.290.000₫</p>
@@ -118,8 +119,8 @@
                             </a>
                         </div>
                         <div class="product-item">
-                            <a href="/pages/products/banphim5.html">
-                                <img src="/Images/BanPhim/banphim5.png" alt="Bàn phím cơ DareU EK75 Rapid Trigger Black"
+                            <a href="../../pages/products/banphim5.html">
+                                <img src="../../Images/BanPhim/banphim5.png" alt="Bàn phím cơ DareU EK75 Rapid Trigger Black"
                                     class="product-image">
                                 <h3 class="product-name">Bàn phím cơ DareU EK75 Rapid Trigger Black</h3>
                                 <p class="product-price">1.890.000₫</p>
@@ -127,8 +128,8 @@
                             </a>
                         </div>
                         <div class="product-item">
-                            <a href="/pages/products/banphim6.html">
-                                <img src="/Images/BanPhim/banphim6.png"
+                            <a href="../../pages/products/banphim6.html">
+                                <img src="../../Images/BanPhim/banphim6.png"
                                     alt="Bàn phím cơ E-Dra không dây EK375 Pro Alpha Red Switch" class="product-image">
                                 <h3 class="product-name">Bàn phím cơ E-Dra không dây EK375 Pro Alpha Red Switch</h3>
                                 <p class="product-price">990.000₫</p>
@@ -156,9 +157,8 @@
                             <div class="footer__section">
                                 <h3>TÀI KHOẢN</h3>
                                 <ul>
-                                    <li><a href="/pages/SignUp.html">Đăng ký tài khoản</a></li>
-                                    <li><a href="/pages/Login.html">Đăng nhập tài khoản</a></li>
-                                    <li><a href="/pages/Cart.html">Giỏ hàng của bạn</a></li>
+                                    <li><a href="../../pages/SignUp.html">Đăng ký tài khoản</a></li>
+                                    <li><a href="../../pages/Login.html">Đăng nhập tài khoản</a></li>
                                 </ul>
                             </div>
                             <div class="footer__contact">
@@ -171,73 +171,46 @@
                     </footer>
                 </div>
             </div>
+        </section>
+    </div>
+    <script>
+        // Lấy tất cả các sản phẩm
+        const productItems = document.querySelectorAll('.product-item');
+
+        // Thêm sự kiện cuộn trang
+        window.addEventListener('scroll', () => {
+            // Lấy vị trí cuộn hiện tại
+            let scrollPosition = window.scrollY;
+
+            // Duyệt qua tất cả các sản phẩm
+            productItems.forEach(item => {
+                // Nếu cuộn xuống quá một giá trị nào đó (ví dụ 100px)
+                if (scrollPosition > 100) {
+                    item.classList.add('shrink'); // Thêm lớp để thu nhỏ
+                } else {
+                    item.classList.remove('shrink'); // Xóa lớp khi cuộn lên
+                }
+            });
+        });
 
 
 
-            <script>
+        document.querySelectorAll('.product_tags button').forEach(button => {
+            button.addEventListener('click', function () {
+                // Xóa class 'active' khỏi tất cả các nút
+                document.querySelectorAll('.product_tags button').forEach(btn => btn.classList.remove('active'));
 
+                // Thêm class 'active' vào nút hiện tại
+                this.classList.add('active');
 
-                // // Chuyển đến trang cụ thể
-                // function goToPage(page) {
-                //     if (page >= 1 && page <= totalPages) {
-                //         showPage(page);
-                //     }
-                // }
-            
-                // // Hiển thị trang đầu tiên khi tải trang
-                // document.addEventListener('DOMContentLoaded', () => {
-                //     showPage(1);
-                // });
-            
-            
-            
-            
-            
-            
-            
-                // Lấy tất cả các sản phẩm
-                const productItems = document.querySelectorAll('.product-item');
-            
-                // Thêm sự kiện cuộn trang
-                window.addEventListener('scroll', () => {
-                    // Lấy vị trí cuộn hiện tại
-                    let scrollPosition = window.scrollY;
-            
-                    // Duyệt qua tất cả các sản phẩm
-                    productItems.forEach(item => {
-                        // Nếu cuộn xuống quá một giá trị nào đó (ví dụ 100px)
-                        if (scrollPosition > 100) {
-                            item.classList.add('shrink'); // Thêm lớp để thu nhỏ
-                        } else {
-                            item.classList.remove('shrink'); // Xóa lớp khi cuộn lên
-                        }
-                    });
-                });
-            
-            
-            
-                document.querySelectorAll('.product_tags button').forEach(button => {
-                    button.addEventListener('click', function () {
-                        // Xóa class 'active' khỏi tất cả các nút
-                        document.querySelectorAll('.product_tags button').forEach(btn => btn.classList.remove('active'));
-            
-                        // Thêm class 'active' vào nút hiện tại
-                        this.classList.add('active');
-            
-                        // Lấy dữ liệu từ nút bấm (nếu cần dùng)
-                        const type = this.getAttribute('data-type');
-                        console.log('Bạn đã chọn:', type);
-            
-                        // Thực hiện thêm chức năng tại đây, ví dụ: lọc sản phẩm, hiển thị dữ liệu, v.v.
-                    });
-                });
-            
-            
-            
-            
-            </script>
+                // Lấy dữ liệu từ nút bấm (nếu cần dùng)
+                const type = this.getAttribute('data-type');
+                console.log('Bạn đã chọn:', type);
+
+                // Thực hiện thêm chức năng tại đây, ví dụ: lọc sản phẩm, hiển thị dữ liệu, v.v.
+            });
+        });
+    </script>
 </body>
 
 </html>
-
-

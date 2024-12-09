@@ -5,18 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/fontawesome-free-5.15.4-web/css/all.css">
-    <link rel="stylesheet" href="/css/menu.css">
-    <title>Thẻ Nhớ</title>
-    <link rel="icon" type="image" href="/Images/logo/favicon-32x32.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="../../css/menu.css">
+    <title>Màn hình</title>
+    <link rel="icon" type="image" href="../../Images/logo/favicon-32x32.png">
 </head>
 
 <body>
     <div class="container">
         <header class="header__content ">
             <div class="header__menu" id="mainNav">
-                <a class="header__link" href="./index.html">
-                    <img class="header__logo" src="/Images/logo/logo.png" alt="logo">
+                <a class="header__link" href="../../index.html">
+                    <img class="header__logo" src="../../Images/logo/logo.png" alt="logo">
                 </a>
                 <form class="input-group" action="" method="post">
                     <div class="input-wrapper">
@@ -27,19 +27,20 @@
                     </div>
                 </form>
                 <ul class="header__active">
-                    <li><a href="/index.html">Trang chủ</a></li>
-                    <li><a href="/pages/menutong/menu.html">Sản phẩm</a></li>
-                    <li><a href="/pages/Intro.html">Giới thiệu</a></li>
-                    <li><a href="/pages/Contact.html">Liên hệ</a></li>
+                    <li><a href="../../index.html">Trang chủ</a></li>
+                    <li><a href="../../pages/menutong/menu.html">Sản phẩm</a></li>
+                    <li><a href="../../pages/Intro.html">Giới thiệu</a></li>
+                    <li><a href="../../pages/Contact.html">Liên hệ</a></li>
                 </ul>
             </div>
             <div class="header__tool">
-                <a href="">
-                    <i class="fa fa-user"></i>
-                </a>
-                <a href="">
+                <div id="userMenu" class="user-menu">
+                    <a href="../../pages/Login.html">Đăng nhập</a> | 
+                    <a href="../../pages/SignUp.html">Đăng ký</a>
+                </div>
+                <a href="../../pages/Cart.html">
                     <i class="fas fa-shopping-cart"></i>
-                    <span class="notify-cart">0</span>
+                    <span class="notify-cart" id="quantity">0</span>
                 </a>
             </div>
         </header>
@@ -50,38 +51,38 @@
             <div class="title">
                 <h1>Danh mục sản phẩm</h1>`
                 <div class="product_tags mb-4">
-                    <a class="btn btn-outline-secondary active" role="button" href="/pages/menutong/menu.html"
+                    <a class="btn btn-outline-secondary active" role="button" href="../../pages/menutong/menu.html"
                         type="Tất cả"> <button>Tất cả </button>
                     </a>
-                    <a class="btn btn-outline-secondary" role="button" href="/pages/menutong/banphim.html"
+                    <a class="btn btn-outline-secondary" role="button" href="../../pages/menutong/banphim.html"
                         type="Bàn phím"><button>Bàn
                             phím</button></a>
-                    <a class="btn btn-outline-secondary" role="button" href="/pages/menutong/capsac.html"
+                    <a class="btn btn-outline-secondary" role="button" href="../../pages/menutong/capsac.html"
                         type="Cáp sạc"><button>Cáp
                             sạc</button></a>
-                    <a class="btn btn-outline-secondary" role="button" href="/pages/menutong/chuot.html"
+                    <a class="btn btn-outline-secondary" role="button" href="../../pages/menutong/chuot.html"
                         type="Chuột"><button> Chuột </button>
                     </a>
-                     <a class="btn btn-outline-secondary" role="button" href="/pages/menutong/loa.html"
+                     <a class="btn btn-outline-secondary" role="button" href="../../pages/menutong/loa.html"
                             type="Loa"><button>Loa</button></a>
-                     <a class="btn1-menu btn-outline-secondary" role="button" href="/pages/menutong/manhinh.html"
+                     <a class="btn1-menu btn-outline-secondary" role="button" href="../../pages/menutong/manhinh.html"
                             type="Màn hình"><button>Màn
                             Hinh</button></a> 
-                     <a class="btn btn-outline-secondary" role="button" href="/pages/menutong/mic.html"
+                     <a class="btn btn-outline-secondary" role="button" href="../../pages/menutong/mic.html"
                             type="Mic"><button>Mic</button></a>
                     
-                     <a class="btn btn-outline-secondary" role="button" href="/pages/menutong/tainghe.html"
+                     <a class="btn btn-outline-secondary" role="button" href="../../pages/menutong/tainghe.html"
                             type="Tai nghe"><button>Tai
                             nghe</button></a> 
-                     <a class="btn btn-outline-secondary" role="button" href="/pages/menutong/thenho.html"
+                     <a class="btn btn-outline-secondary" role="button" href="../../pages/menutong/thenho.html"
                             type="Thẻ nhớ"><button>Thẻ
                             nhớ</button></a> 
                 </div>
                 <div class="product__filter mb-2 text-end">
                     <section class="product-list">
                         <div class="product-item">
-                            <a href="/pages/products/manhinh1.html">
-                                <img src="/Images/ManHinh/manhinh1.png" alt="Màn hình Asus TUF GAMING VG249Q3A 24" Fast
+                            <a href="../../pages/products/manhinh1.html">
+                                <img src="../../Images/ManHinh/manhinh1.png" alt="Màn hình Asus TUF GAMING VG249Q3A 24" Fast
                                     IPS 180Hz Gsync chuyên game" class="product-image">
                                 <h3 class="product-name">Màn hình Asus TUF GAMING VG249Q3A 24" Fast IPS 180Hz Gsync
                                     chuyên
@@ -91,8 +92,8 @@
                             </a>
                         </div>
                         <div class="product-item">
-                            <a href="/pages/products/manhinh2.html">
-                                <img src="/Images/ManHinh/manhinh2.png" alt="Màn hình ViewSonic VA2215-H 22" 100Hz FHD"
+                            <a href="../../pages/products/manhinh2.html">
+                                <img src="../../Images/ManHinh/manhinh2.png" alt="Màn hình ViewSonic VA2215-H 22" 100Hz FHD"
                                     class="product-image">
                                 <h3 class="product-name">Màn hình ViewSonic VA2215-H 22" 100Hz FHD</h3>
                                 <p class="product-price">1.590.000₫</p>
@@ -100,8 +101,8 @@
                             </a>
                         </div>
                         <div class="product-item">
-                            <a href="/pages/products/manhinh3.html">
-                                <img src="/Images/ManHinh/manhinh3.png" alt="Màn hình Asus TUF GAMING VG259Q3A 25" Fast
+                            <a href="../../pages/products/manhinh3.html">
+                                <img src="../../Images/ManHinh/manhinh3.png" alt="Màn hình Asus TUF GAMING VG259Q3A 25" Fast
                                     IPS 180Hz Gsync chuyên game" class="product-image">
                                 <h3 class="product-name">Màn hình Asus TUF GAMING VG259Q3A 25" Fast IPS 180Hz Gsync
                                     chuyên
@@ -111,8 +112,8 @@
                             </a>
                         </div>
                         <div class="product-item">
-                            <a href="/pages/products/manhinh4.html">
-                                <img src="/Images/ManHinh/manhinh4.png" alt="Màn hình Viewsonic VA2432-H 24" IPS 100Hz
+                            <a href="../../pages/products/manhinh4.html">
+                                <img src="../../Images/ManHinh/manhinh4.png" alt="Màn hình Viewsonic VA2432-H 24" IPS 100Hz
                                     viền mỏng" class="product-image">
                                 <h3 class="product-name">Màn hình Viewsonic VA2432-H 24" IPS 100Hz viền mỏng</h3>
                                 <p class="product-price">2.190.000₫</p>
@@ -141,9 +142,8 @@
                             <div class="footer__section">
                                 <h3>TÀI KHOẢN</h3>
                                 <ul>
-                                    <li><a href="/pages/SignUp.html">Đăng ký tài khoản</a></li>
-                                    <li><a href="/pages/Login.html">Đăng nhập tài khoản</a></li>
-                                    <li><a href="/pages/Cart.html">Giỏ hàng của bạn</a></li>
+                                    <li><a href="../../pages/SignUp.html">Đăng ký tài khoản</a></li>
+                                    <li><a href="../../pages/Login.html">Đăng nhập tài khoản</a></li>
                                 </ul>
                             </div>
                             <div class="footer__contact">
@@ -156,71 +156,46 @@
                     </footer>
                 </div>
             </div>
+        </section>
+    </div>
+    <script>
+        // Lấy tất cả các sản phẩm
+        const productItems = document.querySelectorAll('.product-item');
 
+        // Thêm sự kiện cuộn trang
+        window.addEventListener('scroll', () => {
+            // Lấy vị trí cuộn hiện tại
+            let scrollPosition = window.scrollY;
+
+            // Duyệt qua tất cả các sản phẩm
+            productItems.forEach(item => {
+                // Nếu cuộn xuống quá một giá trị nào đó (ví dụ 100px)
+                if (scrollPosition > 100) {
+                    item.classList.add('shrink'); // Thêm lớp để thu nhỏ
+                } else {
+                    item.classList.remove('shrink'); // Xóa lớp khi cuộn lên
+                }
+            });
+        });
+
+
+
+        document.querySelectorAll('.product_tags button').forEach(button => {
+            button.addEventListener('click', function () {
+                // Xóa class 'active' khỏi tất cả các nút
+                document.querySelectorAll('.product_tags button').forEach(btn => btn.classList.remove('active'));
+
+                // Thêm class 'active' vào nút hiện tại
+                this.classList.add('active');
+
+                // Lấy dữ liệu từ nút bấm (nếu cần dùng)
+                const type = this.getAttribute('data-type');
+                console.log('Bạn đã chọn:', type);
+
+                // Thực hiện thêm chức năng tại đây, ví dụ: lọc sản phẩm, hiển thị dữ liệu, v.v.
+            });
+        });
+    </script>
 </body>
 
 </html>
-
-
-<script>
-
-
-    // // Chuyển đến trang cụ thể
-    // function goToPage(page) {
-    //     if (page >= 1 && page <= totalPages) {
-    //         showPage(page);
-    //     }
-    // }
-
-    // // Hiển thị trang đầu tiên khi tải trang
-    // document.addEventListener('DOMContentLoaded', () => {
-    //     showPage(1);
-    // });
-
-
-
-
-
-
-
-    // Lấy tất cả các sản phẩm
-    const productItems = document.querySelectorAll('.product-item');
-
-    // Thêm sự kiện cuộn trang
-    window.addEventListener('scroll', () => {
-        // Lấy vị trí cuộn hiện tại
-        let scrollPosition = window.scrollY;
-
-        // Duyệt qua tất cả các sản phẩm
-        productItems.forEach(item => {
-            // Nếu cuộn xuống quá một giá trị nào đó (ví dụ 100px)
-            if (scrollPosition > 100) {
-                item.classList.add('shrink'); // Thêm lớp để thu nhỏ
-            } else {
-                item.classList.remove('shrink'); // Xóa lớp khi cuộn lên
-            }
-        });
-    });
-
-
-
-        // document.querySelectorAll('.product_tags button').forEach(button => {
-        //     button.addEventListener('click', function () {
-        //         // Xóa class 'active' khỏi tất cả các nút
-        //         document.querySelectorAll('.product_tags button').forEach(btn => btn.classList.remove('active'));
-
-        //         // Thêm class 'active' vào nút hiện tại
-        //         this.classList.add('active');
-
-        //         // Lấy dữ liệu từ nút bấm (nếu cần dùng)
-        //         const type = this.getAttribute('data-type');
-        //         console.log('Bạn đã chọn:', type);
-
-        //         // Thực hiện thêm chức năng tại đây, ví dụ: lọc sản phẩm, hiển thị dữ liệu, v.v.
-        //     });
-        // });
-
-
-
-
-</script>
