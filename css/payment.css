@@ -31,14 +31,14 @@ a {
 
 
 .full {
-    height: 800px;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding-top: 80px;
     margin-bottom: 10px;
     min-height: 100vh;
-    /* Khoảng cách để nội dung không bị che khuất */
+   
 }
 
 .header__logo {
@@ -133,8 +133,7 @@ a {
     font-size: 14px;
     text-align: center;
     flex-shrink: 0;
-    margin-top: 55px;
-
+    width: 100%;
 }
 
 .footer__container {
@@ -276,7 +275,24 @@ h6 {
     border-radius: 3px;
 }
 
-.payment__content__left .payment--button {
+.payment__content__left {
+    display: block;
+    padding: 8px 28px;
+    line-height: normal;
+    border: 1px solid #004581;
+    text-transform: uppercase;
+    font-size: 16px;
+    text-align: center;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #fff;
+    color: #004581;
+    border-radius: 4px;
+    width: 100%;
+    margin-bottom: 80px;
+}
+
+.payment--button {
     display: block;
     padding: 8px 28px;
     line-height: normal;
@@ -382,23 +398,107 @@ h6 {
     color: #004581;
     font-weight: bold;
 }
-.total {
-    text-align: right;
+/* Phong cách cho phần Đơn hàng */
+.order {
+    background-color: #f9f9f9; /* Màu nền nhạt */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto; /* Căn giữa phần tử */
+    font-family: Arial, sans-serif;
 }
 
+.order h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #004581;
+    text-align: center; /* Căn giữa tiêu đề */
+}
+
+/* Phong cách cho từng sản phẩm */
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.cart-item:last-child {
+    border-bottom: none; /* Bỏ đường kẻ cuối cùng */
+}
+
+.cart-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover; /* Bảo đảm ảnh không bị méo */
+    border-radius: 4px; /* Góc bo nhẹ cho ảnh */
+    margin-right: 15px;
+}
+
+.cart-details {
+    flex: 1;
+    font-size: 14px;
+    color: #333;
+}
+
+.cart-details p {
+    margin: 5px 0;
+}
+
+.price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #e60023; /* Màu đỏ cho giá chính */
+}
+
+.original-price {
+    font-size: 14px;
+    color: #999;
+    text-decoration: line-through; /* Gạch ngang giá gốc */
+    margin-left: 5px;
+}
+
+/* Phong cách cho phần tổng tiền */
+.total {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #333;
+}
+
+.total p {
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between; /* Căn đều 2 đầu */
+}
+
+.total #total-price,
+.total #ship-price,
+.total #total-price-final {
+    font-weight: bold;
+    color: #004581;
+}
+
+/* Nút đặt hàng */
 .payment--button {
     background-color: #004581;
     color: white;
-    padding: 12px 25px;
+    padding: 10px 15px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 18px;
-    margin-top: 10px;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 15px;
+    width: 100%; /* Chiếm toàn bộ chiều rộng */
 }
-.payment--button:hover{
-    background-color: #0359a4;
+
+.payment--button:hover {
+    background-color: #0359a4; /* Màu khi hover */
+    transition: background-color 0.3s ease;
 }
+
 @media (max-width: 768px) {
     .payment__content__left, .payment__content__right {
         flex: 100%;

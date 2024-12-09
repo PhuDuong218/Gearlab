@@ -26,18 +26,18 @@ a {
     align-items: center;
     padding-left: 20px;
     padding-right: 20px;
-    position: fixed; /* Làm cho header cố định */
-    top: 0; /* Gắn header ở phía trên cùng của trang */
-    width: 100%; /* Chiều rộng của header bằng 100% */
-    z-index: 1000; /* Đảm bảo header nằm trên các phần tử khác */
+    position: fixed;
+    top: 0; 
+    width: 100%;
+    z-index: 1000; 
 }
 
-/* Thêm khoảng cách cho phần nội dung chính để tránh bị che khuất bởi header */
+
 .container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding-top: 80px; /* Khoảng cách để nội dung không bị che khuất */
+    padding-top: 80px;
 }
 .header__logo {
     margin-left: 30px;
@@ -103,7 +103,7 @@ a {
 }
 
 .header__search--button:hover {
-    color: #004581; /* Màu khi hover */
+    color: #004581;
 }
 
 
