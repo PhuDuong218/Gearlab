@@ -1,151 +1,102 @@
-const email = document.getElementById('email');
-const username = document.getElementById('username');
-const password = document.getElementById('password');
-const confirmPassword = document.getElementById('confirmPassword');
-const form = document.querySelector('#register-form');
+document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById("register-form");
+    const email = document.getElementById("email");
+    const username = document.getElementById("username");
+    const password = document.getElementById("password");
+    const confirmPassword = document.getElementById("confirmPassword");
+    const togglePassword1 = document.getElementById("togglePassword1");
+    const togglePassword2 = document.getElementById("togglePassword2");
 
-// Lấy các nút eye để thay đổi hiển thị mật khẩu
-const togglePassword1 = document.getElementById('togglePassword1');
-const togglePassword2 = document.getElementById('togglePassword2');
+    // Thêm sự kiện để ẩn/hiện mật khẩu
+    togglePassword1.addEventListener("click", function() {
+        togglePasswordVisibility(password, this.querySelector('i'));
+    });
 
-// Hàm thay đổi mật khẩu giữa dạng text và password
-function togglePasswordVisibility(input, icon) {
-    const type = input.type === 'password' ? 'text' : 'password';
-    input.type = type;
+    togglePassword2.addEventListener("click", function() {
+        togglePasswordVisibility(confirmPassword, this.querySelector('i'));
+    });
 
-    if (type === 'password') {
-        icon.classList.remove('fa-eye-slash');
-        icon.classList.add('fa-eye');
-    } else {
-        icon.classList.remove('fa-eye');
-        icon.classList.add('fa-eye-slash');
-    }
-}
+    // Hàm thay đổi hiển thị mật khẩu
+    function togglePasswordVisibility(input, icon) {
+        const type = input.type === 'password' ? 'text' : 'password';
+        input.type = type;
 
-// Thêm sự kiện cho biểu tượng con mắt
-togglePassword1.addEventListener('click', function() {
-    const eyeIcon = this.querySelector('i');
-    togglePasswordVisibility(password, eyeIcon);
-});
-
-togglePassword2.addEventListener('click', function() {
-    const eyeIcon = this.querySelector('i');
-    togglePasswordVisibility(confirmPassword, eyeIcon);
-});
-
-function showError(input, message) {
-    const formControl = input.parentElement;
-    formControl.className = 'form-control error';
-    const small = formControl.querySelector('small');
-    small.innerText = message;
-}
-
-function showSuccess(input) {
-    const formControl = input.parentElement;
-    formControl.className = 'form-control success';
-    const small = formControl.querySelector('small');
-    small.innerText = '';
-}
-
-function checkEmptyError(listInput) {
-    let isEmptyError = false;
-    listInput.forEach(input => {
-        input.value = input.value.trim();
-        if (!input.value) {
-            isEmptyError = true;
-            showError(input, 'Không được để trống!');
+        if (type === 'password') {
+            icon.classList.remove('fa-eye-slash');
+            icon.classList.add('fa-eye');
         } else {
-            showSuccess(input);
+            icon.classList.remove('fa-eye');
+            icon.classList.add('fa-eye-slash');
+        }
+    }
+
+    // Hàm kiểm tra form có lỗi không
+    function validateForm() {
+        let valid = true;
+
+        // Kiểm tra email hợp lệ
+        const emailValue = email.value.trim();
+        const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!regexEmail.test(emailValue)) {
+            alert("Email không hợp lệ.");
+            valid = false;
+        }
+
+        // Kiểm tra tên đăng nhập
+        const usernameValue = username.value.trim();
+        if (usernameValue.length < 7) {
+            alert("Tên đăng nhập phải có ít nhất 7 ký tự.");
+            valid = false;
+        }
+
+        // Kiểm tra mật khẩu
+        const passwordValue = password.value.trim();
+        if (passwordValue.length < 6) {
+            alert("Mật khẩu phải có ít nhất 6 ký tự.");
+            valid = false;
+        }
+
+        // Kiểm tra mật khẩu xác nhận
+        const confirmPasswordValue = confirmPassword.value.trim();
+        if (passwordValue !== confirmPasswordValue) {
+            alert("Mật khẩu xác nhận không khớp.");
+            valid = false;
+        }
+
+        return valid;
+    }
+
+    // Lắng nghe sự kiện submit của form
+    form.addEventListener("submit", function(e) {
+        e.preventDefault(); // Ngừng hành động mặc định của form
+
+        // Kiểm tra dữ liệu form trước khi gửi
+        if (validateForm()) {
+            saveUserData();
+            alert("Đăng ký thành công!");
+            window.location.href = "../pages/Login.html"; // Chuyển hướng đến trang đăng nhập
         }
     });
-    return isEmptyError;
-}
 
-function checkEmailError(input) {
-    input.value = input.value.trim();
-    const regexEmail = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-    let isEmailError = !regexEmail.test(input.value);
-    if (!isEmailError) {
-        showSuccess(input);
-    } else {
-        showError(input, 'Email bạn nhập không hợp lệ!');
-    }
-    return isEmailError;
-}
+    // Hàm lưu dữ liệu người dùng vào localStorage
+    function saveUserData() {
+        const user = {
+            email: email.value.trim(),
+            username: username.value.trim(),
+            password: password.value.trim(),
+        };
 
-function checkLengthErrorUsername(input, min, max) {
-    input.value = input.value.trim();
-    if (input.value.length < min) {
-        showError(input, `Tên đăng nhập phải có ít nhất ${min} ký tự!`);
-        return true;
-    }
-    if (input.value.length > max) {
-        showError(input, `Tên đăng nhập không được vượt quá ${max} ký tự!`);
-        return true;
-    }
-    showSuccess(input);
-    return false;
-}
+        // Lấy danh sách người dùng từ localStorage (nếu có)
+        let users = JSON.parse(localStorage.getItem("users")) || [];
 
-function checkLengthErrorPassword(input, min, max) {
-    input.value = input.value.trim();
-    if (input.value.length < min) {
-        showError(input, `Mật khẩu phải có ít nhất ${min} ký tự!`);
-        return true;
-    }
-    if (input.value.length > max) {
-        showError(input, `Mật khẩu không được vượt quá ${max} ký tự!`);
-        return true;
-    }
-    showSuccess(input);
-    return false;
-}
+        // Kiểm tra xem tên đăng nhập đã tồn tại chưa
+        if (users.some(existingUser => existingUser.username === user.username)) {
+            alert("Tên đăng nhập đã tồn tại. Vui lòng chọn tên khác.");
+            return;
+        }
 
-function checkMatchPasswordError(password, confirmPassword) {
-    if (password.value !== confirmPassword.value) {
-        showError(confirmPassword, 'Mật khẩu xác nhận không đúng!');
-        return true;
-    }
-    showSuccess(confirmPassword);
-    return false;
-}
-
-function saveUserData() {
-    const usernameValue = username.value;
-    const emailValue = email.value;
-    const passwordValue = password.value;
-    const user = {
-        username: usernameValue,
-        email: emailValue,
-        password: passwordValue,
-    };
-
-    // Lấy mảng người dùng từ localStorage
-    let users = JSON.parse(localStorage.getItem('users')) || [];
-
-    // Kiểm tra tên đăng nhập đã tồn tại
-    if (users.some(user => user.username === usernameValue)) {
-        alert("Tên đăng nhập đã tồn tại. Vui lòng chọn tên khác.");
-        return;
-    }
-
-    // Thêm người dùng mới vào mảng
-    users.push(user);
-    localStorage.setItem('users', JSON.stringify(users));
-}
-
-form.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    let isEmailError = checkEmailError(email);
-    let isUserNameLengthError = checkLengthErrorUsername(username, 7, 20);
-    let isPasswordLengthError = checkLengthErrorPassword(password, 6, 20);
-    let isMatchError = checkMatchPasswordError(password, confirmPassword);
-    let isEmptyError = checkEmptyError([email, username, password, confirmPassword]);
-
-    if (!isEmailError && !isUserNameLengthError && !isPasswordLengthError && !isMatchError && !isEmptyError) {
-        saveUserData();
-        alert("Đăng ký thành công!");
-        window.location.href = "Login.html";
+        // Thêm người dùng mới vào danh sách và lưu vào localStorage
+        users.push(user);
+        localStorage.setItem("users", JSON.stringify(users));
     }
 });
