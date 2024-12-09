@@ -74,7 +74,12 @@ document.addEventListener("DOMContentLoaded", function() {
         if (validateForm()) {
             saveUserData();
             alert("Đăng ký thành công!");
-            window.location.href = "../pages/Login.html"; // Chuyển hướng đến trang đăng nhập
+
+            // Đăng nhập ngay sau khi đăng ký thành công
+            // loginAfterSignup();
+
+            // Chuyển hướng đến trang đăng nhập hoặc trang chủ
+            window.location.href = "../Login.html"; // Hoặc trang chủ nếu muốn
         }
     });
 
@@ -98,5 +103,21 @@ document.addEventListener("DOMContentLoaded", function() {
         // Thêm người dùng mới vào danh sách và lưu vào localStorage
         users.push(user);
         localStorage.setItem("users", JSON.stringify(users));
+    }
+
+    // Hàm đăng nhập tự động sau khi đăng ký
+    function loginAfterSignup() {
+        const usernameValue = username.value.trim();
+        const passwordValue = password.value.trim();
+
+        // Kiểm tra thông tin người dùng trong localStorage
+        let users = JSON.parse(localStorage.getItem("users")) || [];
+        const user = users.find(user => user.username === usernameValue && user.password === passwordValue);
+
+        if (user) {
+            alert("Đăng nhập tự động thành công!");
+        } else {
+            alert("Đăng nhập thất bại!");
+        }
     }
 });
