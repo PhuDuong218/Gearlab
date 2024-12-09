@@ -55,7 +55,9 @@
 
                         <li><a href="../../admin/pages/user.html"><i class="fas fa-user-cog"></i><span>Quản lý người
                                     dùng</span></a></li>
-                        <a href="../../admin/pages/Orderdetails.html"><li><i class="fas fa-chart-bar"></i><span>Thống kê</span></li></a>
+                        <a href="../../admin/pages/Orderdetails.html">
+                            <li><i class="fas fa-chart-bar"></i><span>Thống kê</span></li>
+                        </a>
                         <li><i class="fas fa-cogs"></i><span>Cài đặt</span></li>
                     </ul>
                 </div>
@@ -541,6 +543,12 @@
             <form id="edit-product-form">
                 <label for="edit-id">ID:</label>
                 <input type="text" id="edit-id" disabled><br>
+                <label for="edit-image">Hình ảnh:</label>
+                <input type="file" id="edit-image" accept="image/*"><br>
+                <div id="image-preview" style="display:none;">
+                    <label>Ảnh xem trước:</label><br>
+                    <img id="preview-img" src="" alt="Preview" style="max-width: 200px;"><br>
+                </div>
                 <label for="edit-name">Tên sản phẩm:</label>
                 <input type="text" id="edit-name" required><br>
                 <label for="edit-value">Giá:</label>
@@ -649,12 +657,14 @@
 
                 // Lấy thông tin hiện tại từ hàng
                 const id = row.cells[1].innerText;
+                const image = row.querySelector('img').src;
                 const name = row.cells[2].innerText;
                 const value = row.cells[3].innerText;
                 const date = row.cells[4].innerText;
 
                 // Điền thông tin vào biểu mẫu
                 document.getElementById('edit-id').value = id;
+                document.getElementById('preview-img').src = image; // Hiển thị ảnh cũ
                 document.getElementById('edit-name').value = name;
                 document.getElementById('edit-value').value = value;
                 document.getElementById('edit-date').value = date;
@@ -664,22 +674,50 @@
             });
         });
 
+        // Hiển thị ảnh xem trước khi chọn hình ảnh mới
+        document.getElementById('edit-image').addEventListener('change', function (event) {
+            const file = event.target.files[0];
+            const previewDiv = document.getElementById('image-preview');
+            const previewImg = document.getElementById('preview-img');
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    previewImg.src = e.target.result;
+                    previewDiv.style.display = 'block'; // Hiển thị ảnh xem trước
+                };
+                reader.readAsDataURL(file);
+            } else {
+                previewDiv.style.display = 'none'; // Ẩn ảnh xem trước nếu không có ảnh
+            }
+        });
+
         // Lưu chỉnh sửa
         document.getElementById('save-edit').addEventListener('click', function () {
             if (currentRow) {
+                // Kiểm tra các trường đầu vào
+                const newImg = document.getElementById('edit-image').value;
+                const newName = document.getElementById('edit-name').value;
+                const newValue = document.getElementById('edit-value').value;
+                const newDate = document.getElementById('edit-date').value;
+
+                if (!newImg || !newName || !newValue || !newDate) {
+                    alert("Vui lòng điền đầy đủ thông tin.");
+                    return;
+                }
+
                 // Lấy giá trị mới từ biểu mẫu
-                const name = document.getElementById('edit-name').value;
-                const value = document.getElementById('edit-value').value;
-                const date = document.getElementById('edit-date').value;
+                const newImage = document.getElementById('preview-img').src; // Nếu không có ảnh mới, dùng ảnh cũ
 
                 // Cập nhật hàng hiện tại
-                currentRow.cells[2].innerText = name;
-                currentRow.cells[3].innerText = value;
-                currentRow.cells[4].innerText = date;
+                currentRow.cells[2].querySelector('img').src = newImg;
+                currentRow.cells[3].innerText = newName;
+                currentRow.cells[4].innerText = newValue;
+                currentRow.cells[5].innerText = newDate;
 
                 // Đóng biểu mẫu
                 document.getElementById('edit-form').style.display = 'none';
-                alert("Thông tin người dùng đã được cập nhật.");
+                alert("Thông tin sản phẩm đã được cập nhật.");
             }
         });
 
@@ -687,6 +725,7 @@
         document.getElementById('cancel-edit').addEventListener('click', function () {
             document.getElementById('edit-form').style.display = 'none';
         });
+
 
         document.getElementById('logout-btn').addEventListener('click', function () {
             if (confirm('Bạn có chắc chắn muốn đăng xuất không?')) {
