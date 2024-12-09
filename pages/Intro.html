@@ -38,12 +38,27 @@
                 <a href="../pages/Login.html">Đăng nhập</a> |
                 <a href="../pages/SignUp.html">Đăng ký</a>
             </div>
-            <a href="../pages/Cart.html">
+            <a href="">
                 <i class="fas fa-shopping-cart"></i>
                 <span class="notify-cart" id="quantity">0</span>
             </a>
         </div>
     </header>
+
+    <!-- modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Vui lòng đăng nhập hoặc đăng ký để
+                tiếp tục!</p>
+            <a href="../pages/Login.html">
+                <button class="btn-login">ĐĂNG NHẬP</button>
+            </a>
+            <a href="../pages/SignUp.html">
+                <button class="btn-login">ĐĂNG KÝ</button>
+            </a>
+        </div>
+    </div>
 
     <div class="link">
         <a href="../index.html">Trang chủ</a>
@@ -127,7 +142,7 @@
             </div>
         </div>
     </footer>
-
+    <script src="../js/pages_preLogin.js"></script>
 </body>
 
 </html>

@@ -7,8 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="../css/Cart.css">
-    <link rel="stylesheet" href="../css/header-footer.css">
-    <title>Linh kiện điện tử</title>
+    <title>Giỏ hàng</title>
     <link rel="icon" type="image" href="../Images/logo/favicon-32x32.png">
 </head>
 
@@ -17,10 +16,10 @@
         <!-- Header -->
         <header class="header__content">
             <div class="header__menu" id="mainNav">
-                <a class="header__link" href="../index.html">
+                <a class="header__link" href="../pages/user-index.html">
                     <img class="header__logo" src="../Images/logo/logo.png" alt="logo">
                 </a>
-                <form class="input-group" action="" method="post">
+                <form class="input-group search-form" action="" method="post">
                     <div class="input-wrapper">
                         <input type="text" class="form-control" placeholder="Tìm kiếm..." aria-label="Search">
                         <button type="submit" id="button-addon2" class="header__search--button">
@@ -29,37 +28,66 @@
                     </div>
                 </form>
                 <ul class="header__active">
-                    <li><a href="../index.html">Trang chủ</a></li>
+                    <li><a href="../pages/user-index.html">Trang chủ</a></li>
                     <li><a href="../pages/menutong/menu.html">Sản phẩm</a></li>
                     <li><a href="../pages/Intro.html">Giới thiệu</a></li>
                     <li><a href="../pages/Contact.html">Liên hệ</a></li>
                 </ul>
             </div>
             <div class="header__tool">
-                <div id="userMenu" class="user-menu">
-                    <a href="../pages/Login.html">Đăng nhập</a> | 
-                    <a href="../pages/SignUp.html">Đăng ký</a>
-                </div>
-                <a href="../pages/Cart.html">
+                <a href="../pages/user-profile.html" title="Hồ sơ">
+                    <i class="fa fa-user"></i>
+                </a>
+                <a href="../pages/Cart.html" title="Giỏ hàng">
                     <i class="fas fa-shopping-cart"></i>
-                    <span class="notify-cart" id="quantity">0</span>
+                    <span class="notify-cart">0</span>
+                </a>
+                <a href="../index.html" title="Đăng xuất">
+                    <i class="fas fa-sign-out-alt"></i>
                 </a>
             </div>
         </header>
-
-
+        
         <!-- Cart Section -->
         <div class="cart">
-            <nav class="breadcrumb">
-                <a href="../index.html">Trang chủ</a> /
-                <a href="">Giỏ hàng</a>
-                <h2>Giỏ Hàng Của Bạn</h2>
+            <h2>Giỏ Hàng Của Bạn</h2>
+            <div class="cart-item" data-price="750000">
+                <img src="../Images/BanPhim/banphim2.png" alt="Bàn phím cơ DareU EK65s White Black PBT Dream Switch">
+                <div class="cart-details">
+                    <p>Bàn phím cơ DareU EK65s White Black PBT Dream Switch</p>
+                    <p class="price">750.000₫ <span class="original-price">899.000₫</span></p>
+                    <div class="quantity-container">
+                        <button class="quantity-button decrease">-</button>
+                        <input type="number" id="quantity" value="1" class="quantity-input" />
+                        <button class="quantity-button increase">+</button>
+                    </div>
 
-
-                <div class="cart-total">
-                    <p>Tổng tiền: <span id="total-price">1.150.000₫</span></p>
-                    <button class="order-now">Đặt hàng ngay</button>
                 </div>
+                <button class="remove-item"><i class="fas fa-trash"></i></button>
+            </div>
+
+            <div class="cart-item" data-price="400000">
+                <img src="../Images/Chuot/chuot4.png" alt="Chuột Logitech G102 LightSync Black">
+                <div class="cart-details">
+                    <p>Chuột Logitech G102 LightSync Black</p>
+                    <p class="price">400.000₫ <span class="original-price">599.000₫</span></p>
+                    <div class="quantity-container">
+                        <button class="quantity-button decrease">-</button>
+                        <input type="number" id="quantity" value="1" class="quantity-input" />
+                        <button class="quantity-button increase">+</button>
+                    </div>
+
+                </div>
+                <button class="remove-item"><i class="fas fa-trash"></i></button>
+            </div>
+            
+            <div class="cart-total">
+                <p>Tạm tính: <span id="total-price">1.150.000₫</span></p>
+                <p>Phí vận chuyển: <span id="ship-price" ship-price="30000">30.000₫</span></p>
+                <p>Tổng tiền: <span id="total-price-final">1.150.000₫</span></p>
+                <button class="order-now" onclick="location.href='../pages/payment.html'">Đặt hàng ngay</button>
+            </div>
+            <a href="../pages/menutong/menu.html" class="return-menu"><i class="fas fa-arrow-alt-circle-left"></i>Tiếp tục mua sắm</a>
         </div>
 
         <!-- Footer -->
@@ -97,13 +125,22 @@
     <script>
         // Cập nhật tổng tiền
         function updateTotal() {
-            let total = 0;
+            let subtotal = 0;
+            const shippingFee = parseInt(document.getElementById('ship-price').getAttribute('ship-price'));
+
+            // Tính tổng tiền tạm tính
             document.querySelectorAll('.cart-item').forEach(item => {
                 const price = parseInt(item.getAttribute('data-price'));
                 const quantity = parseInt(item.querySelector('.quantity-input').value);
-                total += price * quantity;
+                subtotal += price * quantity;
             });
-            document.getElementById('total-price').innerText = total.toLocaleString('vi-VN') + '₫';
+
+            // Cập nhật tạm tính
+            document.getElementById('total-price').innerText = subtotal.toLocaleString('vi-VN') + '₫';
+
+            // Cập nhật tổng tiền cuối cùng
+            const finalTotal = subtotal + shippingFee;
+            document.getElementById('total-price-final').innerText = finalTotal.toLocaleString('vi-VN') + '₫';
         }
 
         // Cập nhật số lượng sản phẩm trong giỏ hàng
@@ -135,7 +172,6 @@
             });
         });
 
-
         // Kiểm tra giá trị nhập vào ô số lượng
         document.querySelectorAll('.quantity-input').forEach(input => {
             input.addEventListener('input', function () {
@@ -147,9 +183,8 @@
         // Cập nhật số lượng giỏ hàng và tổng tiền ban đầu
         updateCartCount();
         updateTotal();
-
     </script>
-
+    
 </body>
 
 </html>
