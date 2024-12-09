@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let currentIndex = 0;
 
-    
+
     function updateSlider(index) {
         slider.style.transform = `translateX(-${index * 100}%)`;
         dots.forEach(dot => dot.classList.remove('active'));
@@ -15,22 +15,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     updateSlider(currentIndex);
 
-    
+
     setInterval(() => {
-       
+
         currentIndex = (currentIndex + 1) % dots.length;
         updateSlider(currentIndex);
-    }, 10000);  
+    }, 10000);
 
-    
+
     btnRight.addEventListener('click', () => {
-       
+
         currentIndex = (currentIndex + 1) % dots.length;
         updateSlider(currentIndex);
     });
 
     btnLeft.addEventListener('click', () => {
-       
+
         currentIndex = (currentIndex - 1 + dots.length) % dots.length;
         updateSlider(currentIndex);
     });
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    
+
 
 });
 
@@ -57,18 +57,18 @@ function showModal() {
 }
 
 // Đóng modal khi bấm vào nút đóng
-closeModal.onclick = function() {
+closeModal.onclick = function () {
     modal.classList.remove('show');
 }
 
 // Đóng modal nếu người dùng bấm ra ngoài modal
-window.onclick = function(event) {
+window.onclick = function (event) {
     if (event.target == modal) {
         modal.classList.remove('show');
     }
 }
-        // Hiển thị modal khi bấm biểu tượng giỏ hàng
-        document.querySelector('.fa-shopping-cart').addEventListener('click', function (event) {
-            event.preventDefault();
-            modal.style.display = "block";
-        });
+// Hiển thị modal khi bấm biểu tượng giỏ hàng
+document.querySelector('.fa-shopping-cart').addEventListener('click', function (event) {
+    event.preventDefault();
+    modal.style.display = "block";
+});
