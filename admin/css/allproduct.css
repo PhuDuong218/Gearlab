@@ -561,5 +561,9 @@ input[type="submit"]:hover {
     transform: scale(1.05); /* Phóng to nhẹ */
 }
 
+.anh img{
+    height: 100px;
+}
+
 
 
