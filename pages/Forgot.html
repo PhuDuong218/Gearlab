@@ -17,7 +17,7 @@
         <header class="header__content">
             <div class="header__menu" id="mainNav">
                 <a class="header__link" href="../index.html">
-                    <img class="header__logo" src="/Images/logo/logo.png" alt="logo">
+                    <img class="header__logo" src="../Images/logo/logo.png" alt="logo">
                 </a>
                 <form class="input-group" action="" method="post">
                     <div class="input-wrapper">
@@ -28,19 +28,20 @@
                     </div>
                 </form>
                 <ul class="header__active">
-                    <li><a href="/index.html">Trang chủ</a></li>
-                    <li><a href="/pages/menutong/menu.html">Sản phẩm</a></li>
-                    <li><a href="/pages/Intro.html">Giới thiệu</a></li>
-                    <li><a href="/pages/Contact.html">Liên hệ</a></li>
+                    <li><a href="../index.html">Trang chủ</a></li>
+                    <li><a href="../pages/menutong/menu.html">Sản phẩm</a></li>
+                    <li><a href="../pages/Intro.html">Giới thiệu</a></li>
+                    <li><a href="../pages/Contact.html">Liên hệ</a></li>
                 </ul>
             </div>
             <div class="header__tool">
-                <a href="../pages/SignUp.html">
-                    <i class="fa fa-user"></i>
-                </a>
+                <div id="userMenu" class="user-menu">
+                    <a href="../pages/Login.html">Đăng nhập</a> | 
+                    <a href="../pages/SignUp.html">Đăng ký</a>
+                </div>
                 <a href="../pages/Cart.html">
                     <i class="fas fa-shopping-cart"></i>
-                    <span class="notify-cart">0</span>
+                    <span class="notify-cart" id="quantity">0</span>
                 </a>
             </div>
         </header>
@@ -84,7 +85,7 @@
                         <ul>
                             <li><a href="../pages/SignUp.html">Đăng ký tài khoản</a></li>
                             <li><a href="../pages/Login.html">Đăng nhập tài khoản</a></li>
-                            <li><a href="../pages/Cart.html">Giỏ hàng của bạn</a></li>
+                            
                         </ul>
                     </div>
 

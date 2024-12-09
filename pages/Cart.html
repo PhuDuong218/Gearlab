@@ -36,11 +36,8 @@
                 </ul>
             </div>
             <div class="header__tool">
-                <a href="#" id="userIcon">
-                    <i class="fa fa-user"></i>
-                </a>
                 <div id="userMenu" class="user-menu">
-                    <a href="../pages/Login.html">Đăng nhập</a>
+                    <a href="../pages/Login.html">Đăng nhập</a> | 
                     <a href="../pages/SignUp.html">Đăng ký</a>
                 </div>
                 <a href="../pages/Cart.html">
@@ -54,7 +51,7 @@
         <!-- Cart Section -->
         <div class="cart">
             <nav class="breadcrumb">
-                <a href="/index.html">Trang chủ</a> /
+                <a href="../index.html">Trang chủ</a> /
                 <a href="">Giỏ hàng</a>
                 <h2>Giỏ Hàng Của Bạn</h2>
 
@@ -81,9 +78,9 @@
                 <div class="footer__section">
                     <h3>TÀI KHOẢN</h3>
                     <ul>
-                        <li><a href="/pages/SignUp.html">Đăng ký tài khoản</a></li>
-                        <li><a href="/pages/Login.html">Đăng nhập tài khoản</a></li>
-                        <li><a href="/pages/Cart.html">Giỏ hàng của bạn</a></li>
+                        <li><a href="../pages/SignUp.html">Đăng ký tài khoản</a></li>
+                        <li><a href="../pages/Login.html">Đăng nhập tài khoản</a></li>
+                        
                     </ul>
                 </div>
                 <div class="footer__contact">
@@ -150,22 +147,6 @@
         // Cập nhật số lượng giỏ hàng và tổng tiền ban đầu
         updateCartCount();
         updateTotal();
-
-
-        document.getElementById('userIcon').addEventListener('click', function () {
-            var menu = document.getElementById('userMenu');
-            // Toggle hiển thị menu đăng nhập/đăng ký khi nhấn vào icon con người
-            menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
-        });
-
-        // Đóng menu khi người dùng nhấn bên ngoài menu
-        document.addEventListener('click', function (event) {
-            var menu = document.getElementById('userMenu');
-            var userIcon = document.getElementById('userIcon');
-            if (!userIcon.contains(event.target) && !menu.contains(event.target)) {
-                menu.style.display = 'none';
-            }
-        });
 
     </script>
 
