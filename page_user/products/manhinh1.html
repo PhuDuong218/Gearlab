@@ -19,10 +19,10 @@
                 <a class="header__link" href="../../page_user/user-index.html">
                     <img class="header__logo" src="../../Images/logo/logo.png" alt="logo">
                 </a>
-                <form class="input-group search-form" action="" method="post">
+                <form class="input-group search-form" action="../../page_user/search.html" method="get">
                     <div class="input-wrapper">
-                        <input type="text" class="form-control search-input" placeholder="Tìm kiếm..." aria-label="Search">
-                        <button type="submit" class="btn search-button">
+                        <input type="text" class="form-control" placeholder="Tìm kiếm..." aria-label="Search">
+                        <button type="submit" id="button-addon2" class="header__search--button">
                             <i class="fas fa-search"></i>
                         </button>
                     </div>
@@ -194,14 +194,14 @@
             </div>
         </footer>
     </div>
-    <script src="../../js/products.js"></script>
+    <script src="/js/products.js"></script>
     <script>
         // Thêm sự kiện click cho nút đăng xuất
         document.querySelector('.fa-sign-out-alt').addEventListener('click', function (event) {
             event.preventDefault(); // Ngăn chặn hành động mặc định
             const confirmLogout = confirm('Bạn có chắc muốn đăng xuất không?');
             if (confirmLogout) {
-                window.location.href = '../../index.html'; // Điều hướng tới trang đăng xuất
+                window.location.href = '/index.html'; // Điều hướng tới trang đăng xuất
             }
         });
     </script>

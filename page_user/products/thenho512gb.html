@@ -15,38 +15,38 @@
 <body>
     <div class="container">
         <header class="header__content">
-        <div class="header__menu" id="mainNav">
-            <a class="header__link" href="../../page_user/user-index.html">
-                <img class="header__logo" src="../../Images/logo/logo.png" alt="logo">
-            </a>
-            <form class="input-group search-form" action="" method="post">
-                <div class="input-wrapper">
-                    <input type="text" class="form-control search-input" placeholder="Tìm kiếm..." aria-label="Search">
-                    <button type="submit" class="btn search-button">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </div>
-            </form>
-            <ul class="header__active">
-                <li><a href="../../page_user/user-index.html">Trang chủ</a></li>
-                <li><a href="../../page_user/menutong/menu.html">Sản phẩm</a></li>
-                <li><a href="../../page_user/Intro.html">Giới thiệu</a></li>
-                <li><a href="../../page_user/Contact.html">Liên hệ</a></li>
-            </ul>
-        </div>
-        <div class="header__tool">
-            <a href="../../page_user/user-profile.html" title="Hồ sơ">
-                <i class="fa fa-user"></i>
-            </a>
-            <a href="../../page_user/Cart.html" title="Giỏ hàng">
-                <i class="fas fa-shopping-cart"></i>
-                <span class="notify-cart" id="quantity">0</span>
-            </a>
-            <a href="../../index.html" title="Đăng xuất">
-                <i class="fas fa-sign-out-alt"></i>
-            </a>
-        </div>
-    </header>
+            <div class="header__menu" id="mainNav">
+                <a class="header__link" href="../../page_user/user-index.html">
+                    <img class="header__logo" src="../../Images/logo/logo.png" alt="logo">
+                </a>
+                <form class="input-group search-form" action="../../page_user/search.html" method="get">
+                    <div class="input-wrapper">
+                        <input type="text" class="form-control" placeholder="Tìm kiếm..." aria-label="Search">
+                        <button type="submit" id="button-addon2" class="header__search--button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </form>
+                <ul class="header__active">
+                    <li><a href="../../page_user/user-index.html">Trang chủ</a></li>
+                    <li><a href="../../page_user/menutong/menu.html">Sản phẩm</a></li>
+                    <li><a href="../../page_user/Intro.html">Giới thiệu</a></li>
+                    <li><a href="../../page_user/Contact.html">Liên hệ</a></li>
+                </ul>
+            </div>
+            <div class="header__tool">
+                <a href="../../page_user/user-profile.html" title="Hồ sơ">
+                    <i class="fa fa-user"></i>
+                </a>
+                <a href="../../page_user/Cart.html" title="Giỏ hàng">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="notify-cart" id="quantity">0</span>
+                </a>
+                <a href="../../index.html" title="Đăng xuất">
+                    <i class="fas fa-sign-out-alt"></i>
+                </a>
+            </div>
+        </header>
 
         <div class="product-page">
             <nav class="breadcrumb">
@@ -102,8 +102,8 @@
                                 - Giao diện: UHS-I, compatible to UHS interface<br>
                                 - Trọng lượng: Approx. 0.25g<br>
                                 - Chứng nhận EMC: CE(UKCA)/FCC/VCCI/RCM<br>
-                            <br>
-                            <button class="read-more">Xem thêm</button>
+                                <br>
+                                <button class="read-more">Xem thêm</button>
                         </p>
                     </section>
                 </div>
@@ -119,7 +119,8 @@
                 <div class="product_content_items">
                     <div class="card">
                         <div class="product_content__img"><a href="../../page_user/products/thenho256gb.html"><img
-                                    src="../../Images/TheNho/thenho2.png" class="card-img-top" alt="thenho256gb"></a></div>
+                                    src="../../Images/TheNho/thenho2.png" class="card-img-top" alt="thenho256gb"></a>
+                        </div>
                         <div class="card-body ">
                             <h5 class="card-title">Thẻ nhớ Samsung EVO Plus (New 160MB/s) 250GB MB-MC256SA/APC</h5>
                             <p class="card-text">709.000đ</p>
@@ -143,8 +144,7 @@
                 <div class=" product_content_items">
                     <div class="card">
                         <div class="product_content__img"><a href="../../page_user/products/thenho64gb.html"><img
-                                    src="../../Images/TheNho/thenho4.png" class="card-img-top"
-                                    alt=""></a>
+                                    src="../../Images/TheNho/thenho4.png" class="card-img-top" alt=""></a>
                         </div>
                         <div class="card-body ">
                             <h5 class="card-title">Thẻ nhớ Samsung EVO Plus (New 160MB/s) 64GB MB-MC64SA/APC</h5>
@@ -204,14 +204,14 @@
             </div>
         </footer>
     </div>
-    <script src="../../js/products.js"></script>
+    <script src="/js/products.js"></script>
     <script>
         // Thêm sự kiện click cho nút đăng xuất
         document.querySelector('.fa-sign-out-alt').addEventListener('click', function (event) {
             event.preventDefault(); // Ngăn chặn hành động mặc định
             const confirmLogout = confirm('Bạn có chắc muốn đăng xuất không?');
             if (confirmLogout) {
-                window.location.href = '../../index.html'; // Điều hướng tới trang đăng xuất
+                window.location.href = '/index.html'; // Điều hướng tới trang đăng xuất
             }
         });
     </script>
