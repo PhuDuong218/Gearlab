@@ -64,7 +64,7 @@
             <!-- Liên kết và tìm kiếm -->
             <div class="header__main">
                 <ul class="header__active">
-                    <li><a href="../index.html"><i class="fas fa-undo-alt"></i> Về trang Web</a></li>
+                    <li><a href="/index.html"><i class="fas fa-undo-alt"></i> Về trang Web</a></li>
                     <li><a href="/">Liên hệ</a></li>
                 </ul>
                 <form class="input-group" action="" method="post">
@@ -478,9 +478,9 @@ document.querySelectorAll('.action-edit').forEach((table) => {
 
         // Kiểm tra nếu hàng bị khóa
         if (row.classList.contains('locked') && !target.classList.contains('action-lock')) {
-                    
+                    (event.preventDefault());
                     alert("Người dùng đang bị khóa, hãy mở khóa để thực hiện chức năng này.");
-            (event.preventDefault());
+            
                 }
             });
 });
