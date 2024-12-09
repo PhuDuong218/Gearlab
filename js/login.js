@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (validateLogin()) {
             if (checkLogin()) {
                 alert("Đăng nhập thành công!");
-                window.location.href = "../index.html"; // Chuyển hướng đến trang chủ hoặc trang khác
+                window.location.href = "../page_user/user-index.html"; // Chuyển hướng đến trang chủ hoặc trang khác
             } else {
                 alert("Tên đăng nhập hoặc mật khẩu không chính xác.");
             }
