@@ -478,8 +478,9 @@ document.querySelectorAll('.action-edit').forEach((table) => {
 
         // Kiểm tra nếu hàng bị khóa
         if (row.classList.contains('locked') && !target.classList.contains('action-lock')) {
-                    event.preventDefault();
+                    
                     alert("Người dùng đang bị khóa, hãy mở khóa để thực hiện chức năng này.");
+            (event.preventDefault());
                 }
             });
 });
