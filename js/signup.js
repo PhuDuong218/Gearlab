@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function() {
             // loginAfterSignup();
 
             // Chuyển hướng đến trang đăng nhập hoặc trang chủ
-            window.location.href = "../Login.html"; // Hoặc trang chủ nếu muốn
+            window.location.href = "../pages/Login.html"; // Hoặc trang chủ nếu muốn
         }
     });
 
