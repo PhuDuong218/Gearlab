@@ -20,7 +20,7 @@
             <a class="header__link" href="../page_user/user-index.html">
                 <img class="header__logo" src="../Images/logo/logo.png" alt="logo">
             </a>
-            <form class="input-group search-form" action="" method="post">
+            <form class="input-group search-form" action="../page_user/search.html" method="get">
                 <div class="input-wrapper">
                     <input type="text" class="form-control" placeholder="Tìm kiếm..." aria-label="Search">
                     <button type="submit" id="button-addon2" class="header__search--button">
@@ -84,7 +84,7 @@
                     <div class="card-body ">
                         <h5 class="card-title">Bàn phím DareU Không dây EK98 Pro RGB Đen Dream Switch</h5>
                         <p class="card-text">1.290.000₫</p>
-                        <a href="#" class="btn add" data-bs-toggle="modal" data-bs-target="#Modalcheck-user">Đặt hàng</a>
+                        <a href="../page_user/products/banphim4.html" class="btn add" data-bs-toggle="modal" data-bs-target="#Modalcheck-user">Đặt hàng</a>
                     </div>
                 </div>
             </div>
@@ -96,7 +96,7 @@
                     <div class="card-body ">
                         <h5 class="card-title">Bàn phím cơ DareU EK65s White Black PBT Dream Switch</h5>
                         <p class="card-text">750.000₫</p>
-                        <a href="#" class="btn add" data-bs-toggle="modal" data-bs-target="#Modalcheck-user">Đặt hàng</a>
+                        <a href="../page_user/products/banphim2.html" class="btn add" data-bs-toggle="modal" data-bs-target="#Modalcheck-user">Đặt hàng</a>
                     </div>
                 </div>
             </div>
@@ -108,20 +108,13 @@
                     <div class="card-body ">
                         <h5 class="card-title">Bàn phím cơ AKKO 5075B Plus Transparent ASA Black Piano Pro</h5>
                         <p class="card-text">1.690.000₫</p>
-                        <a href="#" class="btn add" data-bs-toggle="modal" data-bs-target="#Modalcheck-user">Đặt hàng</a>
+                        <a href="../page_user/products/banphim3.html" class="btn add" data-bs-toggle="modal" data-bs-target="#Modalcheck-user">Đặt hàng</a>
                     </div>
                 </div>
             </div>
         </div>
         
-        <div class="toast-container position-fixed bottom-0  p-3  toast--add">
-            <div id="add--cart" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-                <div class="toast-body">
-                    Sản phẩm đã được thêm vào giỏ hàng
-
-                </div>
-            </div>
-        </div>
+        
         <!-- PAGINATION  -->
         <nav aria-label="Page navigation " class="product__pagination">
             <ul class="pagination justify-content-center">
@@ -192,7 +185,7 @@
         }
     </Script>
     <!-- ADDCART  -->
-    <script>
+    <!-- <script>
         // ADDCART
         var listAdd = document.getElementsByClassName('add')
         const toastLiveExample = document.getElementById('add--cart')
@@ -202,7 +195,7 @@
                 toast.show()
             });
         }
-    </script>
+    </script> -->
     <script>
         // Thêm sự kiện click cho nút đăng xuất
         document.querySelector('.fa-sign-out-alt').addEventListener('click', function (event) {
