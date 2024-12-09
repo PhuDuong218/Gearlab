@@ -64,7 +64,7 @@
             <!-- Liên kết và tìm kiếm -->
             <div class="header__main">
                 <ul class="header__active">
-                    <li><a href="/index.html"><i class="fas fa-undo-alt"></i> Về trang Web</a></li>
+                    <li><a href="../index.html"><i class="fas fa-undo-alt"></i> Về trang Web</a></li>
                     <li><a href="/">Liên hệ</a></li>
                 </ul>
                 <form class="input-group" action="" method="post">
@@ -79,7 +79,7 @@
 
             <!-- Công cụ -->
             <div class="header__tool">
-                <a href="#" title="Hồ sơ"><i class="fas fa-user"></i></a>
+                <a href="#" title="Hồ sơ">Admin <i class="fas fa-user"></i></a>
                 <a href="#" title="Thông báo"><i class="fas fa-bell"></i></a>
                 <a href="../../admin/index.html" title="Đăng xuất"><i class="fas fa-sign-out-alt"></i></a>
             </div>
@@ -350,11 +350,8 @@
                 <label for="user-email">Email:</label>
                 <input type="email" id="user-email" required><br>
 
-                <label for="edit-role">Vai trò:</label>
-                <select id="edit-role">
-                    <option value="Khách hàng">Khách hàng</option>
-                    <option value="Admin">Admin</option>
-                </select><br>
+                <label for="user-role">Vai trò:</label>
+                <input type="text" id="user-role" required><br>
 
                 <button type="button" id="save-user">Lưu</button>
                 <button type="button" id="cancel-add-user">Hủy</button>
@@ -442,80 +439,50 @@
             });
         });
 
-        // Chức năng xóa sản phẩm cụ thể khi nhấn nút "Xóa"
-        document.querySelectorAll('.action-delete').forEach((button) => {
-            button.addEventListener('click', function (event) {
-                const row = event.target.closest('tr'); // Tìm hàng cần xóa
-                if (row) {
-                    const confirmDelete = confirm("Bạn có chắc chắn muốn xóa người dùng này không?");
-                    if (confirmDelete) {
-                        row.remove(); // Xóa dòng nếu xác nhận
-                        alert("Người dùng đã được xóa thành công.");
-                    }
-                }
-            });
-        });
+        
 
-        // Chức năng xóa các sản phẩm đã chọn
-        document.querySelector('.delete').addEventListener('click', function () {
-            const selectedRows = document.querySelectorAll('.row-checkbox:checked'); // Lấy tất cả checkbox đã chọn
-            if (selectedRows.length === 0) {
-                alert("Không có người dùng nào được chọn để xóa!"); // Không có dòng được chọn
-                return;
+// Chức năng khóa/mở khóa người dùng
+document.querySelectorAll('.action-lock').forEach((button) => {
+    button.addEventListener('click', function (event) {
+        const row = event.target.closest('tr'); // Tìm hàng chứa nút "Khóa"
+        if (!row) return;
+
+        // Kiểm tra trạng thái khóa
+        const isLocked = row.classList.contains('locked');
+        if (isLocked) {
+            const confirmUnlock = confirm("Bạn có chắc chắn muốn mở khóa người dùng này?");
+            row.classList.remove('locked');
+            button.title = "Khóa";
+            button.innerHTML = '<i class="fas fa-lock"></i>'; // Đổi icon về khóa
+            alert("Người dùng đã được mở khóa.");
+        } else {
+            // Khóa người dùng
+            const confirmLock = confirm("Bạn có chắc chắn muốn khóa người dùng này?");
+            if (confirmLock) {
+                row.classList.add('locked');
+                button.title = "Mở khóa";
+                button.innerHTML = '<i class="fas fa-lock-open"></i>';
+                alert("Người dùng đã bị khóa.");
             }
+        }
+    });
+});
 
-            const confirmDelete = confirm(`Bạn có chắc chắn muốn xóa ${selectedRows.length} người dùng đã chọn không?`);
-            if (confirmDelete) {
-                selectedRows.forEach((checkbox) => {
-                    const row = checkbox.closest('tr'); // Tìm hàng chứa checkbox
-                    if (row) {
-                        row.remove(); // Xóa hàng
-                    }
-                });
-                alert("Các người dùng đã được xóa thành công.");
-            }
-        });
-
-        // Chức năng khóa/mở khóa người dùng
-        document.querySelectorAll('.action-lock').forEach((button) => {
-            button.addEventListener('click', function (event) {
-                const row = event.target.closest('tr'); // Tìm hàng chứa nút "Khóa"
-                if (!row) return;
-
-                // Kiểm tra trạng thái khóa
-                const isLocked = row.classList.contains('locked');
-                if (isLocked) {
-                    // Mở khóa
-                    row.classList.remove('locked');
-                    button.title = "Khóa";
-                    button.innerHTML = '<i class="fas fa-lock"></i>'; // Đổi icon về khóa
-                    alert("Người dùng đã được mở khóa.");
-                } else {
-                    // Khóa
-                    row.classList.add('locked');
-                    button.title = "Mở khóa";
-                    button.innerHTML = '<i class="fas fa-lock-open"></i>'; // Đổi icon về mở khóa
-                    alert("Người dùng đã bị khóa.");
-                }
-            });
-        });
-
-        // Vô hiệu hóa các nút hành động nếu người dùng bị khóa
-        document.querySelectorAll('table').forEach((table) => {
-            table.addEventListener('click', function (event) {
-                const target = event.target.closest('button');
+// Vô hiệu hóa chức năng sửa khi người dùng bị khóa
+document.querySelectorAll('.action-edit').forEach((table) => {
+    table.addEventListener('click', function (event) {
+        const target = event.target.closest('button');
                 if (!target) return;
+        const row = event.target.closest('tr');
+        if (!row) return;
 
-                const row = target.closest('tr');
-                if (!row) return;
-
-                // Kiểm tra nếu hàng bị khóa và nút không phải là "Khóa"
-                if (row.classList.contains('locked') && !target.classList.contains('action-lock')) {
+        // Kiểm tra nếu hàng bị khóa
+        if (row.classList.contains('locked') && !target.classList.contains('action-lock')) {
                     event.preventDefault();
                     alert("Người dùng đang bị khóa, hãy mở khóa để thực hiện chức năng này.");
                 }
             });
-        });
+});
 
 
 
