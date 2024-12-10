@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (validateLogin()) {
             if (checkLogin()) {
                 alert("Đăng nhập thành công!");
-                window.location.href = "../page_user/user-index.html"; // Chuyển hướng đến trang chủ hoặc trang khác
+                window.location.href = "../index.html"; // Chuyển hướng đến trang chủ hoặc trang khác
             } else {
                 alert("Tên đăng nhập hoặc mật khẩu không chính xác.");
             }
@@ -50,13 +50,23 @@ document.addEventListener("DOMContentLoaded", function() {
         return valid;
     }
 
-    // Kiểm tra thông tin đăng nhập với dữ liệu trong localStorage
+    // Kiểm tra thông tin đăng nhập với dữ liệu trong localStorage hoặc tài khoản mặc định
     function checkLogin() {
         const usernameValue = username.value.trim();
         const passwordValue = password.value.trim();
 
-        // Lấy danh sách người dùng từ localStorage
+        // Lấy danh sách người dùng từ localStorage (hoặc sử dụng tài khoản mặc định nếu chưa có)
         let users = JSON.parse(localStorage.getItem("users")) || [];
+
+        // Nếu không có người dùng, tạo một tài khoản mặc định
+        if (users.length === 0) {
+            const defaultUser = {
+                username: "phuduong", // Tên tài khoản mặc định
+                password: "hoicchoiquai" // Mật khẩu mặc định
+            };
+            users.push(defaultUser); // Thêm tài khoản mặc định vào localStorage
+            localStorage.setItem("users", JSON.stringify(users)); // Lưu lại vào localStorage
+        }
 
         // Tìm kiếm người dùng với thông tin đăng nhập khớp
         const user = users.find(user => user.username === usernameValue && user.password === passwordValue);
