@@ -345,3 +345,156 @@ a {
 .donhang .table i:hover{
     color: #333;
 }
+
+/* Media Queries cho thiết bị di động (max-width: 480px) */
+@media (max-width: 480px) {
+    .header__content {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .header__logo {
+        width: 80px;
+    }
+
+    .header__menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .input-group {
+        flex-direction: column;
+        max-width: 280px;
+        gap: 10px;
+    }
+
+    .footer__container {
+        flex-direction: column;
+        padding: 0 10px;
+    }
+
+    .file__left .list__tool {
+        padding-left: 20px;
+    }
+
+    .donhang .table tbody tr {
+        height: 50px;
+    }
+}
+
+/* Media Queries cho các thiết bị màn hình rộng hơn (max-width: 768px - các máy tính bảng nhỏ) */
+@media (max-width: 768px) {
+    .header__content {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .header__menu {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .footer__container {
+        flex-direction: column;
+        padding: 0 15px;
+    }
+
+    .file__left .list__tool {
+        padding-left: 30px;
+    }
+
+    .file__left .list__tool li {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    .donhang .table tbody tr {
+        height: 60px;
+    }
+}
+
+/* Media Queries cho màn hình máy tính bảng lớn hoặc laptop (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .header__content {
+        flex-direction: row;
+        height: auto;
+        padding: 10px 20px;
+    }
+
+    .header__menu {
+        gap: 20px;
+    }
+
+    .footer__container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .file__right {
+        padding: 20px;
+    }
+
+    .donhang .table tbody tr {
+        height: 65px;
+    }
+}
+
+/* Media Queries cho các màn hình desktop lớn (min-width: 1025px) */
+@media (min-width: 1025px) {
+    .header__content {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 20px 40px;
+    }
+
+    .header__logo {
+        width: 120px;
+    }
+
+    .header__menu {
+        gap: 30px;
+    }
+
+    .input-group {
+        max-width: 500px;
+    }
+
+    .footer__container {
+        justify-content: space-between;
+        padding: 0 40px;
+    }
+
+    .file__left .list__tool {
+        padding-left: 50px;
+    }
+
+    .file__right {
+        padding: 30px;
+    }
+
+    .donhang .table tbody tr {
+        height: 70px;
+    }
+}
+
+/* Media Queries cho màn hình rất lớn (desktop rộng hoặc màn hình 4k) */
+@media (min-width: 1440px) {
+    .header__content {
+        padding: 20px 60px;
+    }
+
+    .header__menu {
+        gap: 40px;
+    }
+
+    .footer__container {
+        justify-content: space-between;
+        max-width: 1300px;
+    }
+
+    .donhang .table tbody tr {
+        height: 80px;
+    }
+}

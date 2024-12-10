@@ -254,3 +254,111 @@
     border-radius: 5px;
     font-size: 15px;
 }
+
+/* Responsive */
+
+/* Màn hình điện thoại (max-width: 768px) */
+@media (max-width: 768px) {
+    .main-text h2 {
+        font-size: 28px;
+    }
+
+    .home-text {
+        font-size: 20px;
+    }
+
+    .slider img {
+        height: 200px; /* Giảm chiều cao ảnh trên điện thoại */
+    }
+
+    .index-dots {
+        bottom: 10px;
+    }
+
+    .btn1 {
+        width: 40px;
+        height: 40px;
+    }
+
+    .btn1 i {
+        font-size: 18px;
+    }
+}
+
+/* Màn hình tablet (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .home-text {
+        font-size: 22px;
+    }
+
+    .slider img {
+        height: 300px; /* Chiều cao hình ảnh lớn hơn trên tablet */
+    }
+
+    .btn1 {
+        width: 45px;
+        height: 45px;
+    }
+
+    .btn1 i {
+        font-size: 20px;
+    }
+}
+
+/* Màn hình rất nhỏ (max-width: 480px) */
+@media (max-width: 480px) {
+    .main-text h2 {
+        font-size: 24px;
+    }
+
+    .home-text {
+        font-size: 18px;
+    }
+
+    .slider img {
+        height: 150px; /* Giảm thêm chiều cao ảnh trên thiết bị cực nhỏ */
+    }
+
+    .index-dots {
+        gap: 6px;
+    }
+
+    .index-dots .dots {
+        width: 8px;
+        height: 8px;
+    }
+
+    .btn1 {
+        width: 35px;
+        height: 35px;
+    }
+
+    .btn1 i {
+        font-size: 16px;
+    }
+}
+
+/* Màn hình rất nhỏ (max-width: 320px) */
+@media (max-width: 320px) {
+    .home-text {
+        font-size: 16px;
+    }
+
+    .slider img {
+        height: 120px;
+    }
+
+    .btn1 {
+        width: 30px;
+        height: 30px;
+    }
+
+    .btn1 i {
+        font-size: 14px;
+    }
+
+    .index-dots .dots {
+        width: 6px;
+        height: 6px;
+    }
+}

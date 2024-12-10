@@ -318,3 +318,152 @@ a {
     background-color: #004581;
     color: white;
 }
+
+/* Responsive */
+
+/* Màn hình điện thoại (max-width: 768px) */
+@media (max-width: 768px) {
+    .header__content {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .header__menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .header__tool {
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .footer__container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer__section, .footer__contact {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .cart {
+        width: 95%;
+        margin: 10px auto;
+        padding: 10px;
+    }
+
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cart-item img {
+        margin-bottom: 10px;
+    }
+
+    .cart-item .cart-details {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .quantity-container {
+        margin: 10px 0;
+    }
+
+    .cart-total {
+        text-align: center;
+    }
+
+    .discount-code {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .discount-code button {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+/* Màn hình rất nhỏ (max-width: 480px) */
+@media (max-width: 480px) {
+    .header__content {
+        padding: 5px;
+    }
+
+    .header__logo {
+        width: 80px;
+        height: 60px;
+    }
+
+    .footer__section h3, .footer__contact h3 {
+        font-size: 14px;
+    }
+
+    .cart h2 {
+        font-size: 20px;
+    }
+
+    .cart-item .cart-details .item-name {
+        font-size: 14px;
+    }
+
+    .cart-item .cart-details .price {
+        font-size: 16px;
+    }
+
+    .quantity-container {
+        width: 100px;
+    }
+
+    .cart-total .total-price {
+        font-size: 20px;
+    }
+
+    .cart-total .order-now {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    .discount-code input {
+        font-size: 14px;
+    }
+
+    .discount-code button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+/* Màn hình tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .header__menu {
+        gap: 30px;
+    }
+
+    .footer__container {
+        justify-content: space-between;
+    }
+
+    .cart {
+        width: 90%;
+    }
+
+    .cart-item {
+        gap: 10px;
+    }
+
+    .quantity-container {
+        width: 100px;
+    }
+
+    .cart-total {
+        text-align: center;
+    }
+}
+

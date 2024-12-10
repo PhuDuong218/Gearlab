@@ -253,3 +253,104 @@ a {
     color: #333;
 }
 
+/* Responsive */
+
+/* Màn hình điện thoại (max-width: 768px) */
+@media (max-width: 768px) {
+    .header__content {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .header__menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .header__tool {
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .footer__container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer__section,
+    .footer__contact {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .modal-content {
+        width: 90%;
+        height: auto;
+        margin: 20% auto;
+    }
+
+    .link {
+        font-size: 14px;
+        height: auto;
+        padding: 8px;
+    }
+
+    .about {
+        padding: 15px;
+    }
+
+    .about h2 {
+        font-size: 20px;
+    }
+
+    .about p {
+        font-size: 14px;
+    }
+}
+
+/* Màn hình rất nhỏ (max-width: 480px) */
+@media (max-width: 480px) {
+    .header__logo {
+        width: 80px;
+        height: 60px;
+    }
+
+    .footer__section h3,
+    .footer__contact h3 {
+        font-size: 14px;
+    }
+
+    .modal-content {
+        width: 95%;
+    }
+
+    .link {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    .about {
+        margin: 20px auto;
+        font-size: 14px;
+    }
+}
+
+/* Màn hình tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .header__menu {
+        gap: 30px;
+    }
+
+    .footer__container {
+        justify-content: space-between;
+    }
+
+    .about {
+        margin: 30px auto;
+        padding: 20px;
+    }
+}
+

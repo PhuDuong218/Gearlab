@@ -372,3 +372,104 @@ font-size: 16px;
     margin: 5px 0;
     font-size: 14px;
 }
+
+/* Responsive */
+
+/* Màn hình nhỏ (max-width: 768px) */
+@media (max-width: 768px) {
+    .header__content {
+        flex-direction: column;
+        justify-content: center;
+        height: auto;
+        text-align: center;
+    }
+
+    .header__menu {
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .header__tool {
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .product-list {
+        grid-template-columns: repeat(2, 1fr); /* Hiển thị 2 sản phẩm mỗi dòng */
+        gap: 20px;
+        padding: 10px;
+    }
+
+    .product-item {
+        padding: 10px;
+    }
+
+    .product-image {
+        height: 200px; /* Giảm kích thước hình ảnh */
+    }
+
+    .footer__container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer__section,
+    .footer__contact {
+        width: 100%;
+    }
+
+    .pagination {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Màn hình rất nhỏ (max-width: 480px) */
+@media (max-width: 480px) {
+    .header__logo {
+        width: 80px;
+        height: 60px;
+    }
+
+    .product-list {
+        grid-template-columns: repeat(1, 1fr); /* Hiển thị 1 sản phẩm mỗi dòng */
+        gap: 10px;
+    }
+
+    .product-item img {
+        width: 100%; /* Hình ảnh chiếm toàn bộ chiều rộng */
+    }
+
+    .product-price,
+    .product-name {
+        font-size: 14px; /* Giảm kích thước font */
+    }
+
+    .pagination button {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+
+    .footer__section h3,
+    .footer__contact h3 {
+        font-size: 14px;
+    }
+
+    .footer {
+        font-size: 12px;
+        padding: 10px 0;
+    }
+}
+
+/* Màn hình lớn hơn (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .product-list {
+        grid-template-columns: repeat(3, 1fr); /* Hiển thị 3 sản phẩm mỗi dòng */
+        gap: 30px;
+    }
+
+    .footer__container {
+        justify-content: space-between;
+    }
+}
