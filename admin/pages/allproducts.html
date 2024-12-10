@@ -564,17 +564,7 @@
 
 
     <script>
-        //  tên một hàm JavaScript thường được sử dụng để thay đổi trạng thái của menu (hiển thị hoặc ẩn đi) 
-        // function toggleMenu() {
-        //     const menu = document.getElementById("Menu");
-        //     if (menu.classList.contains("menu-visible")) {
-        //         menu.classList.remove("menu-visible");
-        //     } else {
-        //         menu.classList.add("menu-visible");
-        //     }
-        // }
-
-
+        
         // Toggle hiển thị menu chính
         document.getElementById('menu-toggle').addEventListener('click', function () {
             const menu = document.querySelector('.menu');
@@ -658,9 +648,9 @@
                 // Lấy thông tin hiện tại từ hàng
                 const id = row.cells[1].innerText;
                 const image = row.querySelector('img').src;
-                const name = row.cells[2].innerText;
-                const value = row.cells[3].innerText;
-                const date = row.cells[4].innerText;
+                const name = row.cells[3].innerText;
+                const value = row.cells[4].innerText;
+                const date = row.cells[5].innerText;
 
                 // Điền thông tin vào biểu mẫu
                 document.getElementById('edit-id').value = id;
