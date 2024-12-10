@@ -5,8 +5,8 @@
     <title>Linh kiện điện tử</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="icon" href="../../Images/logo/favicon-32x32.png">
+    <link rel="stylesheet" href="../../css/fontawesome-free-5.15.4-web/css/all.css">
+    <link rel="icon" href="../../Images/favicon-32x32.png">
     <link rel="stylesheet" href="../../admin/css/Orderdetails.css">
 </head>
 
@@ -64,8 +64,8 @@
             <!-- Liên kết và tìm kiếm -->
             <div class="header__main">
                 <ul class="header__active">
-                    <li><a href="../../index.html"><i class="fas fa-undo-alt"></i> Về trang Web</a></li>
-                    <li><a href="#">Liên hệ</a></li>
+                    <li><a href="/index.html"><i class="fas fa-undo-alt"></i> Về trang Web</a></li>
+                    <li><a href="/">Liên hệ</a></li>
                 </ul>
                 <form class="input-group" action="" method="post">
                     <div class="input-wrapper">
@@ -81,7 +81,7 @@
             <div class="header__tool">
                 <a href="#"  title="Hồ sơ"><i class="fas fa-user"></i></a>
                 <a href="#"  title="Thông báo"><i class="fas fa-bell"></i></a>
-                <a href="../../admin/index.html"  title="Đăng xuất"><i class="fas fa-sign-out-alt"></i></a>
+                <a href="#"  title="Đăng xuất"><i class="fas fa-sign-out-alt"></i></a>
             </div>
         </header>
     </div>
@@ -93,7 +93,6 @@
         <table style="width:100%">
             <tr>
                 <th>Tên sản phẩm</th>
-                <th>Hình ảnh</th>
                 <th>Số lượng</th>
                 <th>Đơn giá</th>
                 <th>Thành tiền</th>
@@ -101,7 +100,6 @@
 
             <tr>
                 <td>Tai nghe Razer Kraken V4 X USB</td>
-                <td class="anh"><img src="../../Images/TaiNghe/tainghe1.png" alt=""></td>
                 <td>2</td>
                 <td>2.530.000₫</td>
                 <td>3.060.000₫</td>
@@ -109,7 +107,6 @@
 
             <tr>
                 <td>Tai nghe E-Dra EH494W White</td>
-                <td class="anh"><img src="../../Images/TaiNghe/tainghe2.png" alt=""></td>
                 <td>1</td>
                 <td>950.000₫</td>
                 <td>950.000₫</td>
@@ -168,7 +165,7 @@
 
         document.getElementById('logout-btn').addEventListener('click', function () {
             if (confirm('Bạn có chắc chắn muốn đăng xuất không?')) {
-                window.location.href = 'admin/index.html';
+                window.location.href = 'index.html';
             }
         });
 
