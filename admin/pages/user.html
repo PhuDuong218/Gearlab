@@ -53,9 +53,13 @@
                         </li>
                         <!-- </div> -->
 
-                        <a href="../../admin/pages/user.html"><li><i class="fas fa-user-cog"></i><span>Quản lý người
-                                    dùng</span></li></a>
-                        <a href="../../admin/pages/statistical.html"><li><i class="fas fa-chart-bar"></i><span>Thống kê</span></li></a>
+                        <a href="../../admin/pages/user.html">
+                            <li><i class="fas fa-user-cog"></i><span>Quản lý người
+                                    dùng</span></li>
+                        </a>
+                        <a href="../../admin/pages/statistical.html">
+                            <li><i class="fas fa-chart-bar"></i><span>Thống kê</span></li>
+                        </a>
                         <li><i class="fas fa-cogs"></i><span>Cài đặt</span></li>
                     </ul>
                 </div>
@@ -392,21 +396,22 @@
 
 
     <script>
-        //  tên một hàm JavaScript thường được sử dụng để thay đổi trạng thái của menu (hiển thị hoặc ẩn đi) 
-        // function toggleMenu() {
-        //     const menu = document.getElementById("Menu");
-        //     if (menu.classList.contains("menu-visible")) {
-        //         menu.classList.remove("menu-visible");
-        //     } else {
-        //         menu.classList.add("menu-visible");
-        //     }
-        // }
+        
 
+       // Toggle hiển thị menu chính
+       const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.querySelector('.menu');
 
-        // Toggle hiển thị menu chính
-        document.getElementById('menu-toggle').addEventListener('click', function () {
-            const menu = document.querySelector('.menu');
+        menuToggle.addEventListener('click', function () {
             menu.classList.toggle('menu-visible');
+        });
+
+        // Đóng menu khi bấm vào bên ngoài
+        window.addEventListener('click', function (event) {
+            // Kiểm tra xem phần tử bấm vào có phải là menu hay không
+            if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
+                menu.classList.remove('menu-visible');
+            }
         });
 
         // Xử lý các dropdown (Sản phẩm)
@@ -439,50 +444,50 @@
             });
         });
 
-        
 
-// Chức năng khóa/mở khóa người dùng
-document.querySelectorAll('.action-lock').forEach((button) => {
-    button.addEventListener('click', function (event) {
-        const row = event.target.closest('tr'); // Tìm hàng chứa nút "Khóa"
-        if (!row) return;
 
-        // Kiểm tra trạng thái khóa
-        const isLocked = row.classList.contains('locked');
-        if (isLocked) {
-            const confirmUnlock = confirm("Bạn có chắc chắn muốn mở khóa người dùng này?");
-            row.classList.remove('locked');
-            button.title = "Khóa";
-            button.innerHTML = '<i class="fas fa-lock"></i>'; // Đổi icon về khóa
-            alert("Người dùng đã được mở khóa.");
-        } else {
-            // Khóa người dùng
-            const confirmLock = confirm("Bạn có chắc chắn muốn khóa người dùng này?");
-            if (confirmLock) {
-                row.classList.add('locked');
-                button.title = "Mở khóa";
-                button.innerHTML = '<i class="fas fa-lock-open"></i>';
-                alert("Người dùng đã bị khóa.");
-            }
-        }
-    });
-});
+        // Chức năng khóa/mở khóa người dùng
+        document.querySelectorAll('.action-lock').forEach((button) => {
+            button.addEventListener('click', function (event) {
+                const row = event.target.closest('tr'); // Tìm hàng chứa nút "Khóa"
+                if (!row) return;
 
-// Vô hiệu hóa chức năng sửa khi người dùng bị khóa
-document.querySelectorAll('.action-edit').forEach((table) => {
-    table.addEventListener('click', function (event) {
-        const target = event.target.closest('button');
+                // Kiểm tra trạng thái khóa
+                const isLocked = row.classList.contains('locked');
+                if (isLocked) {
+                    const confirmUnlock = confirm("Bạn có chắc chắn muốn mở khóa người dùng này?");
+                    row.classList.remove('locked');
+                    button.title = "Khóa";
+                    button.innerHTML = '<i class="fas fa-lock"></i>'; // Đổi icon về khóa
+                    alert("Người dùng đã được mở khóa.");
+                } else {
+                    // Khóa người dùng
+                    const confirmLock = confirm("Bạn có chắc chắn muốn khóa người dùng này?");
+                    if (confirmLock) {
+                        row.classList.add('locked');
+                        button.title = "Mở khóa";
+                        button.innerHTML = '<i class="fas fa-lock-open"></i>';
+                        alert("Người dùng đã bị khóa.");
+                    }
+                }
+            });
+        });
+
+        // Vô hiệu hóa chức năng sửa khi người dùng bị khóa
+        document.querySelectorAll('.action-edit').forEach((table) => {
+            table.addEventListener('click', function (event) {
+                const target = event.target.closest('button');
                 if (!target) return;
-        const row = event.target.closest('tr');
-        if (!row) return;
+                const row = event.target.closest('tr');
+                if (!row) return;
 
-        // Kiểm tra nếu hàng bị khóa
-        if (row.classList.contains('locked') && !target.classList.contains('action-lock')) {
+                // Kiểm tra nếu hàng bị khóa
+                if (row.classList.contains('locked') && !target.classList.contains('action-lock')) {
                     event.preventDefault();
                     alert("Người dùng đang bị khóa, hãy mở khóa để thực hiện chức năng này.");
                 }
             });
-});
+        });
 
 
 
@@ -615,6 +620,7 @@ document.querySelectorAll('.action-edit').forEach((table) => {
             }
         });
 
+        
 
     </script>
 </body>

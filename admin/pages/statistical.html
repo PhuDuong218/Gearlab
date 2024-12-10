@@ -299,11 +299,21 @@
 <script>
 
     // Toggle hiển thị menu chính
-    document.getElementById('menu-toggle').addEventListener('click', function () {
-        const menu = document.querySelector('.menu');
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.querySelector('.menu');
+
+    menuToggle.addEventListener('click', function () {
         menu.classList.toggle('menu-visible');
     });
 
+    // Đóng menu khi bấm vào bên ngoài
+    window.addEventListener('click', function (event) {
+        // Kiểm tra xem phần tử bấm vào có phải là menu hay không
+        if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
+            menu.classList.remove('menu-visible');
+        }
+    });
+    
     // Hàm xử lý toggle mở/đóng menu con
     function toggleDropdown(dropdown) {
         dropdown.classList.toggle('open');
@@ -366,9 +376,10 @@
         event.preventDefault(); // Ngăn chặn hành động mặc định
         const confirmLogout = confirm('Bạn có chắc muốn đăng xuất không?');
         if (confirmLogout) {
-            window.location.href = 'admin/index.html'; // Điều hướng tới trang đăng xuất
+            window.location.href = '../../admin/index.html'; // Điều hướng tới trang đăng xuất
         }
     });
+
 
 
 </script>

@@ -131,9 +131,19 @@
     <script>
 
         // Toggle hiển thị menu chính
-        document.getElementById('menu-toggle').addEventListener('click', function () {
-            const menu = document.querySelector('.menu');
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.querySelector('.menu');
+
+        menuToggle.addEventListener('click', function () {
             menu.classList.toggle('menu-visible');
+        });
+
+        // Đóng menu khi bấm vào bên ngoài
+        window.addEventListener('click', function (event) {
+            // Kiểm tra xem phần tử bấm vào có phải là menu hay không
+            if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
+                menu.classList.remove('menu-visible');
+            }
         });
 
         // Xử lý các dropdown (Sản phẩm)
@@ -191,11 +201,15 @@
 
         document.getElementById('logout-btn').addEventListener('click', function () {
             if (confirm('Bạn có chắc chắn muốn đăng xuất không?')) {
-                window.location.href = 'admin/index.html';
+                window.location.href = '../../admin/index.html';
             }
         });
 
-
+        window.addEventListener('click', (e) => {
+            if (e.target === loginModal) {
+                loginModal.style.display = 'none';
+            }
+        });
 
 
     </script>

@@ -55,7 +55,9 @@
 
                         <li><a href="../../admin/pages/user.html"><i class="fas fa-user-cog"></i><span>Quản lý người
                                     dùng</span></a></li>
-                        <a href="../../admin/pages/statistical.html"><li><i class="fas fa-chart-bar"></i><span>Thống kê</span></li></a>
+                        <a href="../../admin/pages/statistical.html">
+                            <li><i class="fas fa-chart-bar"></i><span>Thống kê</span></li>
+                        </a>
                         <li><i class="fas fa-cogs"></i><span>Cài đặt</span></li>
                     </ul>
                 </div>
@@ -79,9 +81,9 @@
 
             <!-- Công cụ -->
             <div class="header__tool">
-                <a href="#"  title="Hồ sơ"><i class="fas fa-user"></i></a>
-                <a href="#"  title="Thông báo"><i class="fas fa-bell"></i></a>
-                <a href="../../admin/index.html"  title="Đăng xuất"><i class="fas fa-sign-out-alt"></i></a>
+                <a href="#" title="Hồ sơ"><i class="fas fa-user"></i></a>
+                <a href="#" title="Thông báo"><i class="fas fa-bell"></i></a>
+                <a href="../../admin/index.html" title="Đăng xuất"><i class="fas fa-sign-out-alt"></i></a>
             </div>
         </header>
     </div>
@@ -128,21 +130,20 @@
 
 
     <script>
-        //  tên một hàm JavaScript thường được sử dụng để thay đổi trạng thái của menu (hiển thị hoặc ẩn đi) 
-        // function toggleMenu() {
-        //     const menu = document.getElementById("Menu");
-        //     if (menu.classList.contains("menu-visible")) {
-        //         menu.classList.remove("menu-visible");
-        //     } else {
-        //         menu.classList.add("menu-visible");
-        //     }
-        // }
-
-
         // Toggle hiển thị menu chính
-        document.getElementById('menu-toggle').addEventListener('click', function () {
-            const menu = document.querySelector('.menu');
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.querySelector('.menu');
+
+        menuToggle.addEventListener('click', function () {
             menu.classList.toggle('menu-visible');
+        });
+
+        // Đóng menu khi bấm vào bên ngoài
+        window.addEventListener('click', function (event) {
+            // Kiểm tra xem phần tử bấm vào có phải là menu hay không
+            if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
+                menu.classList.remove('menu-visible');
+            }
         });
 
         // Xử lý các dropdown (Sản phẩm)
@@ -168,10 +169,11 @@
 
         document.getElementById('logout-btn').addEventListener('click', function () {
             if (confirm('Bạn có chắc chắn muốn đăng xuất không?')) {
-                window.location.href = 'admin/index.html';
+                window.location.href = '../../admin/index.html';
             }
         });
 
+        
 
 
 
