@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head>
-    <title>Linh kiện điện tử</title>
+    <title>Trang chủ</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../css/fontawesome-free-5.15.4-web/css/all.css">
-    <link rel="icon" href="../Images/favicon-32x32.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" type="image" href="../Images/logo/favicon-32x32.png">
     <link rel="stylesheet" href="../admin/css/admin.css">
 </head>
 
@@ -98,7 +98,7 @@
         <div class="information">
             <div class="content">
                 <h1>BẢNG TIN</h1>
-                <form action="/admin/admin.html" class="date-form">
+                <form action="../admin/admin.html" class="date-form">
                     <label for="datemin">Từ ngày: </label>
                     <input type="date" id="datemin" name="datemin" min="2005-01-01"><br><br>
 
@@ -234,15 +234,6 @@
 
 
     <script>
-        //  tên một hàm JavaScript thường được sử dụng để thay đổi trạng thái của menu (hiển thị hoặc ẩn đi) 
-        // function toggleMenu() {
-        //     const menu = document.getElementById("Menu");
-        //     if (menu.classList.contains("menu-visible")) {
-        //         menu.classList.remove("menu-visible");
-        //     } else {
-        //         menu.classList.add("menu-visible");
-        //     }
-        // }
 
 
         // Toggle hiển thị menu chính
@@ -280,11 +271,14 @@
         });
 
         // Thêm sự kiện click cho nút đăng xuất
-        document.getElementById('logout-btn').addEventListener('click', function () {
-            if (confirm('Bạn có chắc chắn muốn đăng xuất không?')) {
-                window.location.href = 'index.html';
-            }
-        });
+        // Thêm sự kiện click cho nút đăng xuất
+document.getElementById('logout-btn').addEventListener('click', function () {
+    if (confirm('Bạn có chắc chắn muốn đăng xuất không?')) {
+        localStorage.removeItem('isLoggedIn');
+        window.location.href = 'admin/index.html'; // Hoặc trang đăng nhập của bạn
+    }
+});
+
 
 
     </script>
