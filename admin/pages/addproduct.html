@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head>
-    <title>Linh kiện điện tử</title>
+    <title>Thêm sản phẩm</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../../css/fontawesome-free-5.15.4-web/css/all.css">
-    <link rel="icon" href="../../Images/favicon-32x32.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" href="../../Images/logo/favicon-32x32.png">
     <link rel="stylesheet" href="../../admin/css/addproduct.css">
 </head>
 
@@ -81,7 +81,7 @@
             <div class="header__tool">
                 <a href="#" title="Hồ sơ"><i class="fas fa-user"></i></a>
                 <a href="#" title="Thông báo"><i class="fas fa-bell"></i></a>
-                <a href="#" title="Đăng xuất"><i class="fas fa-sign-out-alt"></i></a>
+                <a href="../../admin/index.html" title="Đăng xuất"><i class="fas fa-sign-out-alt"></i></a>
             </div>
         </header>
     </div>
@@ -109,6 +109,7 @@
                         <option value="thenho">Thẻ nhớ</option>
                         <option value="loa">Loa</option>
                     </select>
+
                 </div>
 
                 <label for="myfile">Thêm ảnh sản phẩm:</label>
@@ -190,7 +191,7 @@
 
         document.getElementById('logout-btn').addEventListener('click', function () {
             if (confirm('Bạn có chắc chắn muốn đăng xuất không?')) {
-                window.location.href = 'index.html';
+                window.location.href = 'admin/index.html';
             }
         });
 
