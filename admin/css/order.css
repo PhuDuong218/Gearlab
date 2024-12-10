@@ -121,7 +121,6 @@ a {
 .menu.menu-visible {
     transform: translateX(0); /* Đưa menu vào màn hình */
 }
-
 /* Nút toggle menu */
 #menu-toggle {
     display: flex;
@@ -250,7 +249,7 @@ a {
 
 /* Hiển thị dropdown menu khi mở */
 .dropdown.open .dropdown-menu {
-    display: block;
+display: block;
 }
 
 .dropdowns {
@@ -372,7 +371,7 @@ th {
 /* Căn nút và chỉnh style */
 button {
     padding: 10px 20px; /* Tăng khoảng cách trong nút */
-    color: white; /* Màu chữ trắng */
+color: white; /* Màu chữ trắng */
     border: none; /* Loại bỏ viền */
     border-radius: 5px; /* Bo góc nút */
     font-size: 16px; /* Kích thước chữ */
@@ -381,6 +380,7 @@ button {
     display: flex;
     align-items: center; /* Căn giữa nội dung nút */
     gap: 10px; /* Khoảng cách giữa icon và text */
+    background-color: #004581;
 }
 
 /* Nút "Tạo" */
@@ -458,19 +458,19 @@ label {
     font-weight: bold;
 }
 
-input[type="date"], select, input[type="submit-search"] {
+input[type="date"], select, button [type="submit-search"] {
     padding: 5px;
     font-size: 14px;
     margin: 5px 0;
 }
 
-input[type="submit-search"] {
+button [type="submit-search"] {
     background-color: #004581;
     color: white;
     cursor: pointer;
 }
 
-input[type="submit-search"]:hover {
+button [type="submit-search"]:hover {
     background-color: #003366;
 }
 
@@ -501,7 +501,7 @@ input[type="submit"]:hover {
 
 /* Định dạng chung cho form tạo đơn hàng */
 #create-order-form {
-    display: none; /* Ẩn form ban đầu */
+display: none; /* Ẩn form ban đầu */
     position: fixed; /* Đặt vị trí cố định trên cùng của màn hình */
     top: 10%; /* Cách từ trên cùng một khoảng */
     left: 50%; /* Canh giữa theo chiều ngang */
@@ -568,5 +568,32 @@ input[type="submit"]:hover {
 
 #create-order-form #cancel-create:hover {
     background-color: #e53935; /* Màu đỏ đậm khi hover */
+}
+
+/* Màu sắc trạng thái */
+.order-status {
+    text-align: center;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.order-status[data-status="Chưa xử lý"] {
+    background-color: red;
+    color: white;
+}
+
+.order-status[data-status="Đang xử lý"] {
+    background-color: yellow;
+    color: black;
+}
+
+.order-status[data-status="Đã xử lý"] {
+    background-color: green;
+    color: white;
+}
+
+.order-status[data-status="Đã hủy"] {
+    background-color: gray;
+    color: white;
 }
 

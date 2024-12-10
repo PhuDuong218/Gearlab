@@ -641,3 +641,12 @@ td{
         gap: 15px;
     }
 }
+
+
+.menu {
+    display: none;
+}
+
+.menu.menu-visible {
+    display: block;
+}
