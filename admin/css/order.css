@@ -570,33 +570,3 @@ input[type="submit"]:hover {
     background-color: #e53935; /* Màu đỏ đậm khi hover */
 }
 
-/* Đánh dấu tình trạng đơn hàng */
-
-/* Trạng thái 'Chưa xử lý' */
-.table td.status-chu-xu-ly {
-    background-color: #f8d7da;
-    color: #721c24;
-    font-weight: bold;
-}
-
-/* Trạng thái 'Đang xử lý' */
-.table td.status-dang-xu-ly {
-    background-color: #fff3cd;
-    color: #856404;
-    font-weight: bold;
-}
-
-/* Trạng thái 'Đã xử lý' */
-.table td.status-da-xu-ly {
-    background-color: #d4edda;
-    color: #155724;
-    font-weight: bold;
-}
-
-/* Trạng thái 'Đã hủy' */
-.table td.status-da-huy {
-    background-color: #f8d7da;
-    color: #721c24;
-    font-weight: bold;
-}
-

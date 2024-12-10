@@ -385,14 +385,6 @@ th {
     background-color: #218838;
 }
 
-.action-delete {
-    color: #dc3545;
-}
-
-.action-delete:hover {
-    background-color: #c82333;
-}
-
 .action-lock {
     color: #ffc107;
 }
@@ -424,17 +416,9 @@ tr.locked {
     }
 }
 
-/* Bố trí các nút trong một hàng */
-.button-container {
-    align-items: center;
-    padding: 5px 20px;
-    display: flex; /* Sử dụng Flexbox để bố trí các nút trong một hàng */
-    justify-content: center; /* Căn giữa các nút theo chiều ngang */
-    gap: 20px; /* Khoảng cách giữa các nút */
-}
-
 /* Căn nút và chỉnh style */
-.delete, .add-user {
+.add-user {
+    align-items: center;
     padding: 10px 20px; /* Tăng khoảng cách trong nút */
     color: white; /* Màu chữ trắng */
     border: none; /* Loại bỏ viền */
@@ -451,16 +435,6 @@ tr.locked {
 
 .add-user-btn:hover{
     background-color: #288ce2;
-}
-
-/* Nút "Xóa" */
-.delete {
-    background-color: #c82333; /* Màu nền đỏ */
-}
-
-/* Nút "Xóa" khi hover */
-.delete:hover {
-    background-color: #bd2130; /* Màu nền khi hover */
 }
 
 /* Nút "Sửa người dùng" */
@@ -591,3 +565,11 @@ tr.locked {
     background-color: #e53935; /* Màu đỏ đậm khi hover */
     color: white; /* Màu chữ trắng khi hover */
 }
+
+.locked {
+    opacity: 0.5; /* Làm mờ dòng */
+    pointer-events: none; /* Vô hiệu hóa thao tác */
+    background-color: #f8d7da; /* Tô màu nền để hiển thị trạng thái bị khóa */
+    color: #6c757d; /* Màu chữ xám */
+}
+

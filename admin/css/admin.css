@@ -509,4 +509,135 @@ td{
 
 }
 
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .header__main {
+        flex-direction: column;
+        margin-left: 0;
+        gap: 10px; /* Tăng khoảng cách giữa các phần tử */
+    }
 
+    .menu {
+        width: 100%;
+        height: auto;
+        transform: translateX(0);
+        position: relative;
+        padding: 10px 0; /* Thêm khoảng cách bên trong menu */
+    }
+
+    .dashboard {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px; /* Tăng khoảng cách giữa các phần tử */
+    }
+
+    .card {
+        width: 90%;
+        margin: 10px 0;
+    }
+
+    .attention {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    table {
+        width: 100%;
+        margin-left: 0;
+        font-size: 14px;
+        word-wrap: break-word; /* Đảm bảo nội dung không bị tràn */
+    }
+
+    th, td {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .date-form {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+
+    .date-form input[type="date"],
+    .date-form button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .header__content {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 10px;
+    }
+
+    .menu {
+        font-size: 14px;
+    }
+
+    .menu ul li {
+        padding: 10px 15px;
+    }
+
+    .menu ul li i {
+        font-size: 18px;
+    }
+
+    .card {
+        width: 100%;
+        padding: 15px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+
+    .progress-circle {
+        width: 80px;
+        height: 80px;
+    }
+
+    svg {
+        width: 80px;
+        height: 80px;
+    }
+
+    .progress-text {
+        font-size: 1em;
+    }
+
+    .attention {
+        margin-top: 15px;
+    }
+}
+
+/* Responsive for extra small devices (≤ 480px) */
+@media (max-width: 480px) {
+    .header__content {
+        padding: 5px;
+    }
+
+    .menu ul li {
+        padding: 8px 12px;
+        gap: 5px; /* Giảm khoảng cách giữa icon và text */
+    }
+
+    table {
+        font-size: 10px;
+    }
+
+    .date-form {
+        gap: 8px;
+    }
+
+    .dashboard {
+        gap: 15px;
+    }
+}
