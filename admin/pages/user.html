@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Quản lý người dùng</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" href="../../Images/logo/favicon-32x32.png">
+    <link rel="stylesheet" href="../../admin/css/user.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header__content">
+            <!-- Menu -->
+            <div class="header__menu">
+                <!-- <a class="nav-link" data-widget="pushmenu" href="#" role="button" onclick="toggleMenu()"> -->
+                <button id="menu-toggle" class="button-menu"><i class="fas fa-bars"></i></button>
+
+                <!-- menu -->
+                <div class="menu">
+                    <ul>
+                        <li><a href="../../admin/admin.html"><i class="fas fa-home"></i><span>Trang chủ</span></a></li>
+                        <!-- <div class="drop"> -->
+                        <li class="dropdown">
+                            <div class="dropdown-header">
+                                <i class="fas fa-box"></i><span>Sản phẩm</span>
+                            </div>
+                            <i class="fas fa-chevron-right arrow-icon"></i>
+
+
+                            <div class="dropdown-menu">
+                                <a href="../../admin/pages/allproducts.html">Tất cả sản phẩm</a>
+                                <a href="../../admin/pages/addproduct.html">Thêm sản phẩm</a>
+                            </div>
+                        </li>
+
+                        <li class="dropdowns">
+                            <div class="dropdowns-header">
+                                <i class="fas fa-clipboard-list"></i><span>Quản lý đơn hàng</span>
+                            </div>
+                            <i class="fas fa-chevron-right arrow-icon"></i>
+
+
+                            <div class="dropdowns-menu">
+                                <a href="../../admin/pages/order.html">Tất cả đơn hàng</a>
+                                <a href="../../admin/pages/order.html">Đã xác nhận</a>
+                                <a href="../../admin/pages/order.html">Đã giao</a>
+                                <a href="../../admin/pages/order.html">Chưa xử lý</a>
+                                <a href="../../admin/pages/order.html">Đã hủy</a>
+                            </div>
+                        </li>
+                        <!-- </div> -->
+
+                        <a href="../../admin/pages/user.html">
+                            <li><i class="fas fa-user-cog"></i><span>Quản lý người
+                                    dùng</span></li>
+                        </a>
+                        <a href="../../admin/pages/statistical.html">
+                            <li><i class="fas fa-chart-bar"></i><span>Thống kê</span></li>
+                        </a>
+                        <li><i class="fas fa-cogs"></i><span>Cài đặt</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Liên kết và tìm kiếm -->
+            <div class="header__main">
+                <ul class="header__active">
+                    <li><a href="/index.html"><i class="fas fa-undo-alt"></i> Về trang Web</a></li>
+                    <li><a href="/">Liên hệ</a></li>
+                </ul>
+                <form class="input-group" action="" method="post">
+                    <div class="input-wrapper">
+                        <input type="text" class="form-control" placeholder="Tìm kiếm..." aria-label="Search">
+                        <button type="submit" id="" class="header__search--button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Công cụ -->
+            <div class="header__tool">
+                <a href="#" title="Hồ sơ">Admin <i class="fas fa-user"></i></a>
+                <a href="#" title="Thông báo"><i class="fas fa-bell"></i></a>
+                <a href="../../admin/index.html" title="Đăng xuất"><i class="fas fa-sign-out-alt"></i></a>
+            </div>
+        </header>
+    </div>
+
+
+
+    <section class="section-container">
+
+        <h1>DANH SÁCH NGƯỜI DÙNG</h1>
+
+        <table style="width:100%">
+            <tr>
+                <th><input type="checkbox" id="select-all" title="Chọn tất cả"></th>
+                <th>ID</th>
+                <th>Tên người dùng</th>
+                <th>Họ và tên</th>
+                <th>Địa chỉ</th>
+                <th>Email</th>
+                <th>Vai trò</th>
+                <th>Hành động</th>
+            </tr>
+            <tr>
+                <td><input type="checkbox" class="row-checkbox"></td>
+                <td>KH1</td>
+                <td>TuyetNhi</td>
+                <td>Phan Tuyết Nhi</td>
+                <td>273, An Dương Vương, Quận 5, Tp HCM</td>
+                <td>nhi@gmail.com</td>
+                <td>Khách hàng</td>
+                <td>
+
+                    <button class="action-edit" title="Sửa">
+                        <i class="fas fa-edit"></i>
+                    </button>
+
+                    <button class="action-lock" title="Khóa">
+                        <i class="fas fa-lock"></i>
+                    </button>
+                </td>
+            </tr>
+
+            <tr>
+                <td><input type="checkbox" class="row-checkbox"></td>
+                <td>KH2</td>
+                <td>Nhi</td>
+                <td>Phan Thị Tuyết Nhi</td>
+                <td>273, An Dương Vương, Quận 5, Tp HCM</td>
+                <td>tnhi@gmail.com</td>
+                <td>Khách hàng</td>
+                <td>
+
+                    <button class="action-edit" title="Sửa">
+                        <i class="fas fa-edit"></i>
+                    </button>
+
+                    <button class="action-lock" title="Khóa">
+                        <i class="fas fa-lock"></i>
+                    </button>
+                </td>
+            </tr>
+
+            <tr>
+                <td><input type="checkbox" class="row-checkbox"></td>
+                <td>KH3</td>
+                <td>Duong</td>
+                <td>Do Phu Duong</td>
+                <td>273, An Dương Vương, Quận 5, Tp HCM</td>
+                <td>duong@gmail.com</td>
+                <td>Khách hàng</td>
+                <td>
+
+                    <button class="action-edit" title="Sửa">
+                        <i class="fas fa-edit"></i>
+                    </button>
+
+                    <button class="action-lock" title="Khóa">
+                        <i class="fas fa-lock"></i>
+                    </button>
+                </td>
+            </tr>
+
+            <tr>
+                <td><input type="checkbox" class="row-checkbox"></td>
+                <td>KH4</td>
+                <td>phuduong</td>
+                <td>Do Phu Duong</td>
+                <td>273, An Dương Vương, Quận 5, Tp HCM</td>
+                <td>phuduong@gmail.com</td>
+                <td>Khách hàng</td>
+                <td>
+
+                    <button class="action-edit" title="Sửa">
+                        <i class="fas fa-edit"></i>
+                    </button>
+
+                    <button class="action-lock" title="Khóa">
+                        <i class="fas fa-lock"></i>
+                    </button>
+                </td>
+            </tr>
+
+            <tr>
+                <td><input type="checkbox" class="row-checkbox"></td>
+                <td>KH5</td>
+                <td>XuAn</td>
+                <td>Nguyen Xuan Anh</td>
+                <td>273, An Dương Vương, Quận 5, Tp HCM</td>
+                <td>anh@gmail.com</td>
+                <td>Khách hàng</td>
+                <td>
+
+                    <button class="action-edit" title="Sửa">
+                        <i class="fas fa-edit"></i>
+                    </button>
+
+                    <button class="action-lock" title="Khóa">
+                        <i class="fas fa-lock"></i>
+                    </button>
+                </td>
+
+            </tr>
+
+            <tr>
+                <td><input type="checkbox" class="row-checkbox"></td>
+                <td>KH6</td>
+                <td>XuanAnh</td>
+                <td>Nguyen Xuan Anh</td>
+                <td>273, An Dương Vương, Quận 5, Tp HCM</td>
+                <td>Xuananh@gmail.com</td>
+                <td>Khách hàng</td>
+                <td>
+
+                    <button class="action-edit" title="Sửa">
+                        <i class="fas fa-edit"></i>
+                    </button>
+
+                    <button class="action-lock" title="Khóa">
+                        <i class="fas fa-lock"></i>
+                    </button>
+                </td>
+            </tr>
+
+            <tr>
+                <td><input type="checkbox" class="row-checkbox"></td>
+                <td>KH7</td>
+                <td>Viet</td>
+                <td>Vũ Lương Quốc Việt</td>
+                <td>273, An Dương Vương, Quận 5, Tp HCM</td>
+                <td>viet@gmail.com</td>
+                <td>Khách hàng</td>
+                <td>
+
+                    <button class="action-edit" title="Sửa">
+                        <i class="fas fa-edit"></i>
+                    </button>
+
+                    <button class="action-lock" title="Khóa">
+                        <i class="fas fa-lock"></i>
+                    </button>
+                </td>
+            </tr>
+
+            <tr>
+                <td><input type="checkbox" class="row-checkbox"></td>
+                <td>KH8</td>
+                <td>TNhi</td>
+                <td>Phan Tuyết Nhi</td>
+                <td>273, An Dương Vương, Quận 5, Tp HCM</td>
+                <td>tuyetnhi@gmail.com</td>
+                <td>Khách hàng</td>
+                <td>
+
+                    <button class="action-edit" title="Sửa">
+                        <i class="fas fa-edit"></i>
+                    </button>
+
+                    <button class="action-lock" title="Khóa">
+                        <i class="fas fa-lock"></i>
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" class="row-checkbox"></td>
+                <td>KH9</td>
+                <td>ThuyNhi</td>
+                <td>Phạm Trần Thúy Nhi</td>
+                <td>273, An Dương Vương, Quận 5, Tp HCM</td>
+                <td>thuynhi@gmail.com</td>
+                <td>Khách hàng</td>
+                <td>
+
+                    <button class="action-edit" title="Sửa">
+                        <i class="fas fa-edit"></i>
+                    </button>
+
+                    <button class="action-lock" title="Khóa">
+                        <i class="fas fa-lock"></i>
+                    </button>
+                </td>
+            </tr>
+
+            <tr>
+                <td><input type="checkbox" class="row-checkbox"></td>
+                <td>KH10</td>
+                <td>PhuongAnh</td>
+                <td>Đỗ Ngọc Phương Anh</td>
+                <td>273, An Dương Vương, Quận 5, Tp HCM</td>
+                <td>phuonganh@gmail.com</td>
+                <td>Khách hàng</td>
+                <td>
+
+                    <button class="action-edit" title="Sửa">
+                        <i class="fas fa-edit"></i>
+                    </button>
+
+                    <button class="action-lock" title="Khóa">
+                        <i class="fas fa-lock"></i>
+                    </button>
+                </td>
+            </tr>
+
+            <tr>
+                <td><input type="checkbox" class="row-checkbox"></td>
+                <td>KH11</td>
+                <td>Thoa</td>
+                <td>Lê Thị Kim Thoa</td>
+                <td>273, An Dương Vương, Quận 5, Tp HCM</td>
+                <td>thoa@gmail.com</td>
+                <td>Khách hàng</td>
+                <td>
+
+                    <button class="action-edit" title="Sửa">
+                        <i class="fas fa-edit"></i>
+                    </button>
+
+                    <button class="action-lock" title="Khóa">
+                        <i class="fas fa-lock"></i>
+                    </button>
+                </td>
+            </tr>
+
+
+
+        </table>
+
+        <div class="button-container">
+            <button class="add-user">Thêm người dùng</button>
+        </div>
+
+        <!-- Form thêm người dùng -->
+        <div id="add-user-form" class="add-user-form">
+            <h2>Thêm Người Dùng</h2>
+            <form id="user-form">
+                <label for="user-id">Mã người dùng:</label>
+                <input type="text" id="user-id" required><br>
+
+                <label for="user-name">Tên người dùng:</label>
+                <input type="text" id="user-name" required><br>
+
+                <label for="user-fullname">Tên đầy đủ:</label>
+                <input type="text" id="user-fullname" required><br>
+
+                <label for="user-address">Địa chỉ:</label>
+                <input type="text" id="user-address" required><br>
+
+                <label for="user-email">Email:</label>
+                <input type="email" id="user-email" required><br>
+
+                <label for="user-role">Vai trò:</label>
+                <input type="text" id="user-role" required><br>
+
+                <button type="button" id="save-user">Lưu</button>
+                <button type="button" id="cancel-add-user">Hủy</button>
+            </form>
+        </div>
+
+
+
+        <div id="edit-form" class="edit-form">
+            <h2>Sửa thông tin người dùng</h2>
+            <form id="edit-user-form">
+                <label for="edit-id">ID:</label>
+                <input type="text" id="edit-id" disabled><br>
+                <label for="edit-username">Tên người dùng:</label>
+                <input type="text" id="edit-username" required><br>
+                <label for="edit-fullname">Họ và tên:</label>
+                <input type="text" id="edit-fullname" required><br>
+                <label for="edit-address">Địa chỉ:</label>
+                <input type="text" id="edit-address" required><br>
+                <label for="edit-email">Email:</label>
+                <input type="email" id="edit-email" required><br>
+                <label for="edit-role">Vai trò:</label>
+                <select id="edit-role">
+                    <option value="Khách hàng">Khách hàng</option>
+                    <option value="Admin">Admin</option>
+                </select><br>
+                <button type="button" id="save-edit">Lưu</button>
+                <button type="button" id="cancel-edit">Hủy</button>
+            </form>
+        </div>
+
+
+        </div>
+
+    </section>
+
+
+
+
+    <script>
+        
+
+       // Toggle hiển thị menu chính
+       const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.querySelector('.menu');
+
+        menuToggle.addEventListener('click', function () {
+            menu.classList.toggle('menu-visible');
+        });
+
+        // Đóng menu khi bấm vào bên ngoài
+        window.addEventListener('click', function (event) {
+            // Kiểm tra xem phần tử bấm vào có phải là menu hay không
+            if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
+                menu.classList.remove('menu-visible');
+            }
+        });
+
+        // Xử lý các dropdown (Sản phẩm)
+        document.querySelectorAll('.dropdown-header, .dropdown .arrow-icon').forEach(element => {
+            element.addEventListener('click', function () {
+                const dropdown = this.closest('.dropdown'); // Tìm dropdown chứa phần tử được nhấn
+                toggleDropdown(dropdown);
+            });
+        });
+
+        // Hàm xử lý toggle mở/đóng menu con
+        function toggleDropdown(dropdown) {
+            dropdown.classList.toggle('open');
+        }
+
+        // Xử lý các dropdowns (Quản lý đơn hàng)
+        document.querySelectorAll('.dropdowns-header, .dropdowns .arrow-icon').forEach(element => {
+            element.addEventListener('click', function () {
+                const dropdowns = this.closest('.dropdowns'); // Tìm dropdown chứa phần tử được nhấn
+                toggleDropdown(dropdowns);
+            });
+        });
+
+        // Chức năng chọn tất cả sản phẩm
+        document.getElementById('select-all').addEventListener('change', function () {
+            const isChecked = this.checked; // Lấy trạng thái checkbox "Chọn tất cả"
+            const checkboxes = document.querySelectorAll('.row-checkbox'); // Tất cả checkbox của các hàng
+            checkboxes.forEach((checkbox) => {
+                checkbox.checked = isChecked; // Gán trạng thái cho từng checkbox
+            });
+        });
+
+
+
+        // Chức năng khóa/mở khóa người dùng
+        document.querySelectorAll('.action-lock').forEach((button) => {
+            button.addEventListener('click', function (event) {
+                const row = event.target.closest('tr'); // Tìm hàng chứa nút "Khóa"
+                if (!row) return;
+
+                // Kiểm tra trạng thái khóa
+                const isLocked = row.classList.contains('locked');
+                if (isLocked) {
+                    const confirmUnlock = confirm("Bạn có chắc chắn muốn mở khóa người dùng này?");
+                    row.classList.remove('locked');
+                    button.title = "Khóa";
+                    button.innerHTML = '<i class="fas fa-lock"></i>'; // Đổi icon về khóa
+                    alert("Người dùng đã được mở khóa.");
+                } else {
+                    // Khóa người dùng
+                    const confirmLock = confirm("Bạn có chắc chắn muốn khóa người dùng này?");
+                    if (confirmLock) {
+                        row.classList.add('locked');
+                        button.title = "Mở khóa";
+                        button.innerHTML = '<i class="fas fa-lock-open"></i>';
+                        alert("Người dùng đã bị khóa.");
+                    }
+                }
+            });
+        });
+
+        // Vô hiệu hóa chức năng sửa khi người dùng bị khóa
+        document.querySelectorAll('.action-edit').forEach((table) => {
+            table.addEventListener('click', function (event) {
+                const target = event.target.closest('button');
+                if (!target) return;
+                const row = event.target.closest('tr');
+                if (!row) return;
+
+                // Kiểm tra nếu hàng bị khóa
+                if (row.classList.contains('locked') && !target.classList.contains('action-lock')) {
+                    event.preventDefault();
+                    alert("Người dùng đang bị khóa, hãy mở khóa để thực hiện chức năng này.");
+                }
+            });
+        });
+
+
+
+        // Biến lưu hàng hiện tại đang được sửa
+        let currentRow = null;
+
+        // Hiển thị biểu mẫu sửa
+        document.querySelectorAll('.action-edit').forEach(button => {
+            button.addEventListener('click', function (event) {
+                const row = event.target.closest('tr'); // Hàng chứa nút "Sửa"
+                currentRow = row;
+
+                // Lấy thông tin hiện tại từ hàng
+                const id = row.cells[1].innerText;
+                const username = row.cells[2].innerText;
+                const fullname = row.cells[3].innerText;
+                const address = row.cells[4].innerText;
+                const email = row.cells[5].innerText;
+                const role = row.cells[6].innerText;
+
+                // Điền thông tin vào biểu mẫu
+                document.getElementById('edit-id').value = id;
+                document.getElementById('edit-username').value = username;
+                document.getElementById('edit-fullname').value = fullname;
+                document.getElementById('edit-address').value = address;
+                document.getElementById('edit-email').value = email;
+                document.getElementById('edit-role').value = role;
+
+                // Hiển thị biểu mẫu
+                document.getElementById('edit-form').style.display = 'block';
+            });
+        });
+
+        // Lưu chỉnh sửa
+        document.getElementById('save-edit').addEventListener('click', function () {
+            if (currentRow) {
+                // Lấy giá trị mới từ biểu mẫu
+                const username = document.getElementById('edit-username').value;
+                const fullname = document.getElementById('edit-fullname').value;
+                const address = document.getElementById('edit-address').value;
+                const email = document.getElementById('edit-email').value;
+                const role = document.getElementById('edit-role').value;
+
+                // Cập nhật hàng hiện tại
+                currentRow.cells[2].innerText = username;
+                currentRow.cells[3].innerText = fullname;
+                currentRow.cells[4].innerText = address;
+                currentRow.cells[5].innerText = email;
+                currentRow.cells[6].innerText = role;
+
+                // Đóng biểu mẫu
+                document.getElementById('edit-form').style.display = 'none';
+                alert("Thông tin người dùng đã được cập nhật.");
+            }
+        });
+
+        // Hủy chỉnh sửa
+        document.getElementById('cancel-edit').addEventListener('click', function () {
+            document.getElementById('edit-form').style.display = 'none';
+        });
+
+
+        // Hiển thị form thêm người dùng khi nhấn vào nút "Thêm người dùng" hoặc icon "Thêm người dùng"
+        document.querySelectorAll('.add-user, .add-user-btn').forEach(button => {
+            button.addEventListener('click', function () {
+                document.getElementById('add-user-form').style.display = 'block';
+            });
+        });
+
+        // Hủy việc thêm người dùng
+        document.getElementById('cancel-add-user').addEventListener('click', function () {
+            document.getElementById('add-user-form').style.display = 'none';
+            document.getElementById('user-form').reset(); // Làm trống form
+        });
+
+        // Lưu thông tin người dùng mới vào bảng
+        document.getElementById('save-user').addEventListener('click', function () {
+            // Lấy thông tin từ form
+            const userId = document.getElementById('user-id').value;
+            const userName = document.getElementById('user-name').value;
+            const userFullname = document.getElementById('user-fullname').value;
+            const userAddress = document.getElementById('user-address').value;
+            const userEmail = document.getElementById('user-email').value;
+            const userRole = document.getElementById('user-role').value;
+
+            // Kiểm tra thông tin có hợp lệ không
+            if (!userId || !userName || !userFullname || !userAddress || !userEmail || !userRole) {
+                alert("Vui lòng điền đầy đủ thông tin.");
+                return;
+            }
+
+            // Tạo một hàng mới và thêm vào bảng
+            const table = document.getElementById('user-table').getElementsByTagName('tbody')[0];
+            const newRow = table.insertRow();
+
+            // Thêm các ô vào hàng mới
+            newRow.innerHTML = `
+        <td><input type="checkbox" class="row-checkbox"></td>
+        <td>${userId}</td>
+        <td>${userName}</td>
+        <td>${userFullname}</td>
+        <td>${userAddress}</td>
+        <td>${userEmail}</td>
+        <td>${userRole}</td>
+        <td>
+            <button class="add-user-btn" title="Thêm người dùng">
+                <i class="fas fa-user-plus"></i>
+            </button>
+            <button class="action-edit" title="Sửa">
+                <i class="fas fa-edit"></i>
+            </button>
+            <button class="action-delete" title="Xóa">
+                <i class="fas fa-trash-alt"></i>
+            </button>
+            <button class="action-lock" title="Khóa">
+                <i class="fas fa-lock"></i>
+            </button>
+        </td>
+    `;
+
+            // Ẩn form sau khi thêm người dùng
+            document.getElementById('add-user-form').style.display = 'none';
+            document.getElementById('user-form').reset(); // Làm trống form
+        });
+
+
+        document.getElementById('logout-btn').addEventListener('click', function () {
+            if (confirm('Bạn có chắc chắn muốn đăng xuất không?')) {
+                window.location.href = 'admin/index.html';
+            }
+        });
+
+        
+
+    </script>
+</body>
+
+</html>

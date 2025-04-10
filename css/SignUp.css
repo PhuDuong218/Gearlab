@@ -1,0 +1,264 @@
+/* Reset default margin, padding and box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit; /* Sửa lại để kế thừa màu sắc của phần tử cha */
+}
+
+/* Full screen container */
+.full {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between;
+}
+
+/* Header styling */
+.header__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #004581;
+    color: white;
+    height: 70px;
+    padding: 0 20px;
+}
+
+.header__logo {
+    width: 70px;
+    height: 70px;
+    border-radius: 5px;
+    margin-left: 30px;
+}
+
+.header__link {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__menu {
+    flex: 4;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.header__tool {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header__active {
+    flex: 2;
+    display: flex;
+    gap: 40px;
+}
+
+/* Search bar */
+.input-group {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    max-width: 400px;
+}
+
+.input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.eye-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #888;
+}
+
+.eye-icon:hover {
+    color: #004581;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px 40px 10px 15px; /* Chừa không gian cho icon */
+    border: 1px solid #004581;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.header__search--button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.header__search--button i {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Modal */
+.modal-content {
+    background-color: #ffffff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 20%;
+    text-align: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.close {
+    color: #000;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    cursor: pointer;
+}
+
+/* Login form container */
+.container_login {
+    width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Login form */
+.login-form {
+    text-align: center;
+}
+
+.btn:hover {
+    color: #73a5d0;
+}
+
+.login-h1 {
+    margin-bottom: 15px;
+}
+
+/* Form elements */
+.form-group {
+    text-align: left;
+    margin: 15px 0;
+}
+
+.btn {
+    background-color: #004581;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%; /* Đảm bảo nút "Đăng ký" chiếm full width */
+    margin-top: 15px;
+}
+
+.btn1-link {
+    background-color: white;
+    color: #004581;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+.login-links {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.login-links a {
+    color: #000;
+}
+
+/* Footer */
+.footer {
+    background-color: #004581;
+    color: white;
+    padding: 10px 0;
+    font-size: 14px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.footer__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer__section,
+.footer__contact {
+    margin: 10px;
+    width: 200px;
+}
+
+.footer__section h3,
+.footer__contact h3 {
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.footer__section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer__section ul li {
+    margin: 5px 0;
+}
+
+.footer__section ul li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer__section ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer__contact p {
+    margin: 5px 0;
+    font-size: 14px;
+}
